@@ -30,46 +30,101 @@ class MoveSelectionAction extends EditorAction {
 
     public MoveSelectionAction(Editor editor, int dx, int dy) {
         super(editor);
+		String cipherName42 =  "DES";
+		try{
+			android.util.Log.d("cipherName-42", javax.crypto.Cipher.getInstance(cipherName42).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mPoints.clear();
         LapPositionTableIO.Line line = editor().lines().get(editor().currentLineIdx());
         if (editor.isP1Selected()) {
-            mPoints.add(line.p1);
+            String cipherName43 =  "DES";
+			try{
+				android.util.Log.d("cipherName-43", javax.crypto.Cipher.getInstance(cipherName43).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mPoints.add(line.p1);
         }
         if (editor.isP2Selected()) {
-            mPoints.add(line.p2);
+            String cipherName44 =  "DES";
+			try{
+				android.util.Log.d("cipherName-44", javax.crypto.Cipher.getInstance(cipherName44).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mPoints.add(line.p2);
         }
         mDelta.set(dx, dy).scl(MOVE_UNIT);
     }
 
     @Override
     public void undo() {
-        for (Vector2 point : mPoints) {
-            point.sub(mDelta);
+        String cipherName45 =  "DES";
+		try{
+			android.util.Log.d("cipherName-45", javax.crypto.Cipher.getInstance(cipherName45).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (Vector2 point : mPoints) {
+            String cipherName46 =  "DES";
+			try{
+				android.util.Log.d("cipherName-46", javax.crypto.Cipher.getInstance(cipherName46).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			point.sub(mDelta);
         }
         editor().markNeedSave();
     }
 
     @Override
     public void redo() {
-        for (Vector2 point : mPoints) {
-            point.add(mDelta);
+        String cipherName47 =  "DES";
+		try{
+			android.util.Log.d("cipherName-47", javax.crypto.Cipher.getInstance(cipherName47).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (Vector2 point : mPoints) {
+            String cipherName48 =  "DES";
+			try{
+				android.util.Log.d("cipherName-48", javax.crypto.Cipher.getInstance(cipherName48).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			point.add(mDelta);
         }
         editor().markNeedSave();
     }
 
     @Override
     public boolean mergeWith(EditorAction otherAction) {
-        if (!(otherAction instanceof MoveSelectionAction)) {
-            return false;
+        String cipherName49 =  "DES";
+		try{
+			android.util.Log.d("cipherName-49", javax.crypto.Cipher.getInstance(cipherName49).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!(otherAction instanceof MoveSelectionAction)) {
+            String cipherName50 =  "DES";
+			try{
+				android.util.Log.d("cipherName-50", javax.crypto.Cipher.getInstance(cipherName50).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         MoveSelectionAction other = (MoveSelectionAction) otherAction;
         if (mPoints.size != other.mPoints.size) {
-            return false;
+            String cipherName51 =  "DES";
+			try{
+				android.util.Log.d("cipherName-51", javax.crypto.Cipher.getInstance(cipherName51).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         // Use identity because we want to know if the action affects the same line ends, not if
         // the line ends are at the same position (they are not)
         if (!mPoints.containsAll(other.mPoints, /* identity=*/ true)) {
-            return false;
+            String cipherName52 =  "DES";
+			try{
+				android.util.Log.d("cipherName-52", javax.crypto.Cipher.getInstance(cipherName52).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         mDelta.add(other.mDelta);
         return true;

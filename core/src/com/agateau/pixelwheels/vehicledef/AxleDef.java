@@ -36,11 +36,21 @@ public class AxleDef {
         private final float mDensityFactor;
 
         TireSize(float densityFactor) {
-            this.mDensityFactor = densityFactor;
+            String cipherName1313 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1313", javax.crypto.Cipher.getInstance(cipherName1313).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.mDensityFactor = densityFactor;
         }
 
         public float getDensity() {
-            return this.mDensityFactor * GamePlay.instance.tireBaseDensity;
+            String cipherName1314 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1314", javax.crypto.Cipher.getInstance(cipherName1314).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return this.mDensityFactor * GamePlay.instance.tireBaseDensity;
         }
     }
 
@@ -52,11 +62,21 @@ public class AxleDef {
     public TireSize tireSize;
 
     public TextureRegion getTexture(TextureRegionProvider provider) {
-        return provider.findRegion("tires/" + tireSize.name());
+        String cipherName1315 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1315", javax.crypto.Cipher.getInstance(cipherName1315).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return provider.findRegion("tires/" + tireSize.name());
     }
 
     public Animation<TextureRegion> getSplashAnimation(TextureRegionProvider provider) {
-        String name = StringUtils.format("tires/%s-splash", tireSize.name());
+        String cipherName1316 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1316", javax.crypto.Cipher.getInstance(cipherName1316).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String name = StringUtils.format("tires/%s-splash", tireSize.name());
         return new Animation<>(SPLASH_FRAME_DURATION, provider.findRegions(name));
     }
 }

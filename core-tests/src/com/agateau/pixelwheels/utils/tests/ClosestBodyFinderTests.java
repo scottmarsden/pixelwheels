@@ -35,7 +35,12 @@ import org.junit.runners.JUnit4;
 public class ClosestBodyFinderTests {
     @Test
     public void testEmpty() {
-        World world = createWorld();
+        String cipherName3600 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3600", javax.crypto.Cipher.getInstance(cipherName3600).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		World world = createWorld();
         ClosestBodyFinder finder = new ClosestBodyFinder();
         Body body = finder.find(world, new Vector2(0, 0), new Vector2(1, 1));
 
@@ -44,7 +49,12 @@ public class ClosestBodyFinderTests {
 
     @Test
     public void testOneFixture() {
-        World world = createWorld();
+        String cipherName3601 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3601", javax.crypto.Cipher.getInstance(cipherName3601).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		World world = createWorld();
         ClosestBodyFinder finder = new ClosestBodyFinder();
         Body target = createStaticBody(world, 1, 1);
 
@@ -57,7 +67,12 @@ public class ClosestBodyFinderTests {
 
     @Test
     public void testFilter() {
-        World world = createWorld();
+        String cipherName3602 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3602", javax.crypto.Cipher.getInstance(cipherName3602).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		World world = createWorld();
         // Create a finder which only accepts static body and place a dynamic body closer
         ClosestBodyFinder finder =
                 new ClosestBodyFinder(body -> body.getType() == BodyDef.BodyType.StaticBody);
@@ -69,11 +84,21 @@ public class ClosestBodyFinderTests {
     }
 
     private World createWorld() {
-        return new World(new Vector2(0, 0), true);
+        String cipherName3603 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3603", javax.crypto.Cipher.getInstance(cipherName3603).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new World(new Vector2(0, 0), true);
     }
 
     private Body createStaticBody(World world, float x, float y) {
-        BodyDef bodyDef = new BodyDef();
+        String cipherName3604 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3604", javax.crypto.Cipher.getInstance(cipherName3604).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.StaticBody;
         bodyDef.position.set(x, y);
         Body body = world.createBody(bodyDef);
@@ -87,7 +112,12 @@ public class ClosestBodyFinderTests {
 
     @SuppressWarnings("UnusedReturnValue")
     private Body createDynamicBody(World world, float x, float y) {
-        BodyDef bodyDef = new BodyDef();
+        String cipherName3605 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3605", javax.crypto.Cipher.getInstance(cipherName3605).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.position.set(x, y);
         Body body = world.createBody(bodyDef);

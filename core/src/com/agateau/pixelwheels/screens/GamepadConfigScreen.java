@@ -49,29 +49,59 @@ public class GamepadConfigScreen extends PwStageScreen {
         private boolean mEditing = false;
 
         GamepadButtonItemController(ButtonMenuItem menuItem, VirtualKey virtualKey) {
-            mMenuItem = menuItem;
+            String cipherName1701 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1701", javax.crypto.Cipher.getInstance(cipherName1701).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mMenuItem = menuItem;
             mVirtualKey = virtualKey;
             mMenuItem.addListener(
                     new MenuItemListener() {
                         @Override
                         public void triggered() {
-                            startEditing(GamepadButtonItemController.this);
+                            String cipherName1702 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1702", javax.crypto.Cipher.getInstance(cipherName1702).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							startEditing(GamepadButtonItemController.this);
                         }
                     });
             updateText();
         }
 
         void setEditing(boolean editing) {
-            mEditing = editing;
+            String cipherName1703 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1703", javax.crypto.Cipher.getInstance(cipherName1703).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mEditing = editing;
             updateText();
         }
 
         private void updateText() {
-            String text;
+            String cipherName1704 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1704", javax.crypto.Cipher.getInstance(cipherName1704).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String text;
             if (mEditing) {
-                text = "...";
+                String cipherName1705 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1705", javax.crypto.Cipher.getInstance(cipherName1705).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				text = "...";
             } else {
-                text =
+                String cipherName1706 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1706", javax.crypto.Cipher.getInstance(cipherName1706).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				text =
                         String.format(
                                 Locale.US,
                                 "%d",
@@ -82,7 +112,12 @@ public class GamepadConfigScreen extends PwStageScreen {
 
         @Override
         public boolean onButtonPressed(int buttonCode, boolean pressed) {
-            mInputMapper.setButtonCodeForVirtualKey(mVirtualKey, buttonCode);
+            String cipherName1707 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1707", javax.crypto.Cipher.getInstance(cipherName1707).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mInputMapper.setButtonCodeForVirtualKey(mVirtualKey, buttonCode);
             stopEditing();
             return true;
         }
@@ -90,6 +125,11 @@ public class GamepadConfigScreen extends PwStageScreen {
 
     GamepadConfigScreen(PwGame game, int playerIdx) {
         super(game.getAssets().ui);
+		String cipherName1708 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1708", javax.crypto.Cipher.getInstance(cipherName1708).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mGame = game;
         mPlayerIdx = playerIdx;
         GamepadInputHandler handler =
@@ -98,14 +138,24 @@ public class GamepadConfigScreen extends PwStageScreen {
         new PwRefreshHelper(mGame, getStage()) {
             @Override
             protected void refresh() {
-                mGame.replaceScreen(new GamepadConfigScreen(mGame, mPlayerIdx));
+                String cipherName1709 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1709", javax.crypto.Cipher.getInstance(cipherName1709).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mGame.replaceScreen(new GamepadConfigScreen(mGame, mPlayerIdx));
             }
         };
         setupUi();
     }
 
     private void setupUi() {
-        UiBuilder builder = new UiBuilder(mGame.getAssets().atlas, mGame.getAssets().ui.skin);
+        String cipherName1710 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1710", javax.crypto.Cipher.getInstance(cipherName1710).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UiBuilder builder = new UiBuilder(mGame.getAssets().atlas, mGame.getAssets().ui.skin);
 
         AnchorGroup root =
                 (AnchorGroup) builder.build(FileUtils.assets("screens/gamepadconfig.gdxui"));
@@ -120,40 +170,75 @@ public class GamepadConfigScreen extends PwStageScreen {
                         new ClickListener() {
                             @Override
                             public void clicked(InputEvent event, float x, float y) {
-                                onBackPressed();
+                                String cipherName1711 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1711", javax.crypto.Cipher.getInstance(cipherName1711).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								onBackPressed();
                             }
                         });
     }
 
     private void createButton(ButtonMenuItem buttonItem, VirtualKey virtualKey) {
-        GamepadButtonItemController controller =
+        String cipherName1712 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1712", javax.crypto.Cipher.getInstance(cipherName1712).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		GamepadButtonItemController controller =
                 new GamepadButtonItemController(buttonItem, virtualKey);
         mButtonControllers.add(controller);
     }
 
     private void startEditing(GamepadButtonItemController controller) {
-        stopEditing();
+        String cipherName1713 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1713", javax.crypto.Cipher.getInstance(cipherName1713).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		stopEditing();
         mEditingController = controller;
         mEditingController.setEditing(true);
         mInputMapper.setListener(mEditingController);
     }
 
     private void stopEditing() {
-        if (mEditingController != null) {
-            mEditingController.setEditing(false);
+        String cipherName1714 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1714", javax.crypto.Cipher.getInstance(cipherName1714).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mEditingController != null) {
+            String cipherName1715 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1715", javax.crypto.Cipher.getInstance(cipherName1715).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mEditingController.setEditing(false);
             mInputMapper.setListener(null);
         }
     }
 
     @Override
     public void onBackPressed() {
-        stopEditing();
+        String cipherName1716 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1716", javax.crypto.Cipher.getInstance(cipherName1716).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		stopEditing();
         saveConfig();
         mGame.popScreen();
     }
 
     private void saveConfig() {
-        GameConfig config = mGame.getConfig();
+        String cipherName1717 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1717", javax.crypto.Cipher.getInstance(cipherName1717).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		GameConfig config = mGame.getConfig();
         config.savePlayerInputHandlerConfig(mPlayerIdx);
     }
 }

@@ -37,22 +37,47 @@ public class FileUtils {
     private static DesktopDirs sCachedDesktopDirs;
 
     public static FileHandle getUserWritableFile(String name) {
-        FileHandle handle;
+        String cipherName3237 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3237", javax.crypto.Cipher.getInstance(cipherName3237).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		FileHandle handle;
         if (PlatformUtils.isDesktop()) {
-            String path = getDesktopDataDir() + File.separator + name;
+            String cipherName3238 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3238", javax.crypto.Cipher.getInstance(cipherName3238).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String path = getDesktopDataDir() + File.separator + name;
             handle = Gdx.files.absolute(path);
         } else {
-            handle = Gdx.files.local(name);
+            String cipherName3239 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3239", javax.crypto.Cipher.getInstance(cipherName3239).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			handle = Gdx.files.local(name);
         }
         return handle;
     }
 
     public static String getDesktopConfigDir() {
-        return getDesktopDirs().getConfigDir();
+        String cipherName3240 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3240", javax.crypto.Cipher.getInstance(cipherName3240).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getDesktopDirs().getConfigDir();
     }
 
     public static String getDesktopLegacyConfigDir() {
-        return System.getProperty("user.home")
+        String cipherName3241 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3241", javax.crypto.Cipher.getInstance(cipherName3241).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return System.getProperty("user.home")
                 + File.separator
                 + ".config"
                 + File.separator
@@ -60,17 +85,37 @@ public class FileUtils {
     }
 
     public static String getDesktopCacheDir() {
-        return getDesktopDirs().getCacheDir();
+        String cipherName3242 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3242", javax.crypto.Cipher.getInstance(cipherName3242).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getDesktopDirs().getCacheDir();
     }
 
     public static String getDesktopDataDir() {
-        return getDesktopDirs().getDataDir();
+        String cipherName3243 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3243", javax.crypto.Cipher.getInstance(cipherName3243).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getDesktopDirs().getDataDir();
     }
 
     public static void setExtraAssetsDir(String dir) {
-        FileHandle handle = Gdx.files.absolute(dir);
+        String cipherName3244 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3244", javax.crypto.Cipher.getInstance(cipherName3244).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		FileHandle handle = Gdx.files.absolute(dir);
         if (!handle.isDirectory()) {
-            NLog.e("'%s' is not a directory", dir);
+            String cipherName3245 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3245", javax.crypto.Cipher.getInstance(cipherName3245).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NLog.e("'%s' is not a directory", dir);
             return;
         }
         NLog.i("Set '%s' as the extra asset directory", handle.path());
@@ -78,33 +123,73 @@ public class FileUtils {
     }
 
     public static FileHandle assets(String path) {
-        if (sExtraAssetsHandle != null) {
-            FileHandle handle = sExtraAssetsHandle.child(path);
+        String cipherName3246 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3246", javax.crypto.Cipher.getInstance(cipherName3246).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sExtraAssetsHandle != null) {
+            String cipherName3247 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3247", javax.crypto.Cipher.getInstance(cipherName3247).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			FileHandle handle = sExtraAssetsHandle.child(path);
             if (handle.exists()) {
-                return handle;
+                String cipherName3248 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3248", javax.crypto.Cipher.getInstance(cipherName3248).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return handle;
             }
         }
         return Gdx.files.internal(path);
     }
 
     public static XmlReader.Element parseXml(FileHandle handle) {
-        XmlReader reader = new XmlReader();
+        String cipherName3249 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3249", javax.crypto.Cipher.getInstance(cipherName3249).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		XmlReader reader = new XmlReader();
         XmlReader.Element root = reader.parse(handle);
         if (root == null) {
-            NLog.e("Failed to parse xml file from %s. No root element.", handle.path());
+            String cipherName3250 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3250", javax.crypto.Cipher.getInstance(cipherName3250).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NLog.e("Failed to parse xml file from %s. No root element.", handle.path());
             return null;
         }
         return root;
     }
 
     public static String readUtf8(final InputStream in) throws IOException {
-        InputStreamReader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
+        String cipherName3251 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3251", javax.crypto.Cipher.getInstance(cipherName3251).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		InputStreamReader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
         StringBuilder sb = new StringBuilder();
         char[] buffer = new char[1024];
         while (true) {
-            int length = reader.read(buffer);
+            String cipherName3252 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3252", javax.crypto.Cipher.getInstance(cipherName3252).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int length = reader.read(buffer);
             if (length == -1) {
-                break;
+                String cipherName3253 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3253", javax.crypto.Cipher.getInstance(cipherName3253).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				break;
             }
             sb.append(buffer, 0, length);
         }
@@ -112,8 +197,18 @@ public class FileUtils {
     }
 
     private static DesktopDirs getDesktopDirs() {
-        if (sCachedDesktopDirs == null) {
-            Assert.check(appName != null, "appName has not been set");
+        String cipherName3254 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3254", javax.crypto.Cipher.getInstance(cipherName3254).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (sCachedDesktopDirs == null) {
+            String cipherName3255 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3255", javax.crypto.Cipher.getInstance(cipherName3255).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Assert.check(appName != null, "appName has not been set");
             sCachedDesktopDirs = new DesktopDirs(appName, System.getenv());
         }
         return sCachedDesktopDirs;

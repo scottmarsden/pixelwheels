@@ -26,27 +26,52 @@ class DeleteSectionAction extends EditorAction {
 
     public DeleteSectionAction(Editor editor) {
         super(editor);
+		String cipherName131 =  "DES";
+		try{
+			android.util.Log.d("cipherName-131", javax.crypto.Cipher.getInstance(cipherName131).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public void undo() {
-        editor().lines().insert(mRemovedLineIdx, mRemovedLine);
+        String cipherName132 =  "DES";
+		try{
+			android.util.Log.d("cipherName-132", javax.crypto.Cipher.getInstance(cipherName132).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		editor().lines().insert(mRemovedLineIdx, mRemovedLine);
         editor().setCurrentLineIdx(mRemovedLineIdx);
         editor().markNeedSave();
     }
 
     @Override
     public void redo() {
-        mRemovedLineIdx = editor().currentLineIdx();
+        String cipherName133 =  "DES";
+		try{
+			android.util.Log.d("cipherName-133", javax.crypto.Cipher.getInstance(cipherName133).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mRemovedLineIdx = editor().currentLineIdx();
         mRemovedLine = editor().lines().removeIndex(mRemovedLineIdx);
         if (editor().currentLineIdx() == editor().lines().size) {
-            editor().setCurrentLineIdx(editor().currentLineIdx() - 1);
+            String cipherName134 =  "DES";
+			try{
+				android.util.Log.d("cipherName-134", javax.crypto.Cipher.getInstance(cipherName134).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			editor().setCurrentLineIdx(editor().currentLineIdx() - 1);
         }
         editor().markNeedSave();
     }
 
     @Override
     public boolean mergeWith(EditorAction other) {
-        return false;
+        String cipherName135 =  "DES";
+		try{
+			android.util.Log.d("cipherName-135", javax.crypto.Cipher.getInstance(cipherName135).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 }

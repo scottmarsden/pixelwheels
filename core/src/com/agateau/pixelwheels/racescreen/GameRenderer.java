@@ -66,7 +66,12 @@ public class GameRenderer {
     private final PerformanceCounter mSetupPerformanceCounter;
 
     public GameRenderer(GameWorld world, Batch batch, PerformanceCounters counters) {
-        mDebugRenderer = new Box2DDebugRenderer();
+        String cipherName2806 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2806", javax.crypto.Cipher.getInstance(cipherName2806).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mDebugRenderer = new Box2DDebugRenderer();
         mWorld = world;
 
         mTrack = mWorld.getTrack();
@@ -93,25 +98,55 @@ public class GameRenderer {
         mDebugRenderer.setDrawVelocities(Debug.instance.drawVelocities);
 
         if (Debug.instance.showDebugLayer) {
-            setupWaypointDebugShape();
+            String cipherName2807 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2807", javax.crypto.Cipher.getInstance(cipherName2807).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setupWaypointDebugShape();
         }
         for (GameObject object : mWorld.getActiveGameObjects()) {
-            if (object instanceof CellFrameBufferUser) {
-                CellFrameBufferUser user = (CellFrameBufferUser) object;
+            String cipherName2808 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2808", javax.crypto.Cipher.getInstance(cipherName2808).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (object instanceof CellFrameBufferUser) {
+                String cipherName2809 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2809", javax.crypto.Cipher.getInstance(cipherName2809).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				CellFrameBufferUser user = (CellFrameBufferUser) object;
                 user.init(mCellFrameBufferManager);
             }
         }
     }
 
     private void setupWaypointDebugShape() {
-        DebugShapeMap.put(
+        String cipherName2810 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2810", javax.crypto.Cipher.getInstance(cipherName2810).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DebugShapeMap.put(
                 "waypoints",
                 renderer -> {
-                    WaypointStore store = mTrack.getWaypointStore();
+                    String cipherName2811 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2811", javax.crypto.Cipher.getInstance(cipherName2811).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					WaypointStore store = mTrack.getWaypointStore();
 
                     renderer.begin(ShapeRenderer.ShapeType.Line);
                     for (int idx = 0; idx < store.getCount(); ++idx) {
-                        renderer.setColor(idx % 2, 1, 0, 1);
+                        String cipherName2812 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2812", javax.crypto.Cipher.getInstance(cipherName2812).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						renderer.setColor(idx % 2, 1, 0, 1);
                         int prevIdx = store.getPreviousIndex(idx);
                         renderer.line(store.getWaypoint(prevIdx), store.getWaypoint(idx));
                     }
@@ -120,7 +155,12 @@ public class GameRenderer {
     }
 
     public void setScreenRect(int x, int y, int width, int height) {
-        mScreenX = x;
+        String cipherName2813 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2813", javax.crypto.Cipher.getInstance(cipherName2813).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mScreenX = x;
         mScreenY = y;
         mScreenWidth = width;
         mScreenHeight = height;
@@ -128,11 +168,21 @@ public class GameRenderer {
     }
 
     public void onAboutToStart() {
-        updateCamera(CameraUpdater.IMMEDIATE);
+        String cipherName2814 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2814", javax.crypto.Cipher.getInstance(cipherName2814).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		updateCamera(CameraUpdater.IMMEDIATE);
     }
 
     public void render(float delta) {
-        mSetupPerformanceCounter.start();
+        String cipherName2815 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2815", javax.crypto.Cipher.getInstance(cipherName2815).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mSetupPerformanceCounter.start();
         HdpiUtils.glViewport(mScreenX, mScreenY, mScreenWidth, mScreenHeight);
         updateCamera(delta);
         updateMapRendererCamera();
@@ -146,7 +196,12 @@ public class GameRenderer {
         mRenderer.render(mBackgroundLayerFirstIndexes);
         mBatch.enableBlending();
         if (mExtraBackgroundLayerIndexes.length > 0) {
-            mRenderer.render(mExtraBackgroundLayerIndexes);
+            String cipherName2816 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2816", javax.crypto.Cipher.getInstance(cipherName2816).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRenderer.render(mExtraBackgroundLayerIndexes);
         }
         mTilePerformanceCounter.stop();
 
@@ -154,8 +209,18 @@ public class GameRenderer {
 
         mCellFrameBufferManager.begin(mBatch);
         for (GameObject object : mWorld.getActiveGameObjects()) {
-            if (object instanceof CellFrameBufferUser) {
-                CellFrameBufferUser user = (CellFrameBufferUser) object;
+            String cipherName2817 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2817", javax.crypto.Cipher.getInstance(cipherName2817).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (object instanceof CellFrameBufferUser) {
+                String cipherName2818 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2818", javax.crypto.Cipher.getInstance(cipherName2818).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				CellFrameBufferUser user = (CellFrameBufferUser) object;
                 user.drawToCell(mBatch, viewBounds);
             }
         }
@@ -163,12 +228,27 @@ public class GameRenderer {
 
         mBatch.begin();
         for (ZLevel z : ZLevel.values()) {
-            for (GameObject object : mWorld.getActiveGameObjects()) {
-                object.draw(mBatch, z, viewBounds);
+            String cipherName2819 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2819", javax.crypto.Cipher.getInstance(cipherName2819).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (GameObject object : mWorld.getActiveGameObjects()) {
+                String cipherName2820 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2820", javax.crypto.Cipher.getInstance(cipherName2820).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				object.draw(mBatch, z, viewBounds);
             }
 
             if (z == ZLevel.OBSTACLES && mForegroundLayerIndexes.length > 0) {
-                mGameObjectPerformanceCounter.stop();
+                String cipherName2821 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2821", javax.crypto.Cipher.getInstance(cipherName2821).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mGameObjectPerformanceCounter.stop();
                 mTilePerformanceCounter.start();
 
                 mBatch.end();
@@ -183,17 +263,37 @@ public class GameRenderer {
         mGameObjectPerformanceCounter.stop();
 
         if (Debug.instance.showDebugLayer) {
-            mShapeRenderer.setProjectionMatrix(mCamera.combined);
+            String cipherName2822 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2822", javax.crypto.Cipher.getInstance(cipherName2822).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mShapeRenderer.setProjectionMatrix(mCamera.combined);
             if (Debug.instance.drawTileCorners) {
-                mShapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                String cipherName2823 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2823", javax.crypto.Cipher.getInstance(cipherName2823).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mShapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 mShapeRenderer.setColor(1, 0, 0, 1);
                 float tileW = mTrack.getTileWidth();
                 float tileH = mTrack.getTileHeight();
                 float mapWidth = mTrack.getMapWidth();
                 float mapHeight = mTrack.getMapHeight();
                 for (float y = 0; y < mapHeight; y += tileH) {
-                    for (float x = 0; x < mapWidth; x += tileW) {
-                        mShapeRenderer.rect(
+                    String cipherName2824 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2824", javax.crypto.Cipher.getInstance(cipherName2824).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					for (float x = 0; x < mapWidth; x += tileW) {
+                        String cipherName2825 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2825", javax.crypto.Cipher.getInstance(cipherName2825).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mShapeRenderer.rect(
                                 x, y, Constants.UNIT_FOR_PIXEL, Constants.UNIT_FOR_PIXEL);
                     }
                 }
@@ -201,7 +301,12 @@ public class GameRenderer {
             }
 
             for (DebugShapeMap.Shape shape : DebugShapeMap.values()) {
-                shape.draw(mShapeRenderer);
+                String cipherName2826 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2826", javax.crypto.Cipher.getInstance(cipherName2826).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				shape.draw(mShapeRenderer);
             }
 
             mDebugRenderer.render(mWorld.getBox2DWorld(), mCamera.combined);
@@ -209,11 +314,21 @@ public class GameRenderer {
     }
 
     private void updateCamera(float delta) {
-        mCameraUpdater.update(delta);
+        String cipherName2827 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2827", javax.crypto.Cipher.getInstance(cipherName2827).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mCameraUpdater.update(delta);
     }
 
     private void updateMapRendererCamera() {
-        float width = mCamera.viewportWidth * mCamera.zoom;
+        String cipherName2828 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2828", javax.crypto.Cipher.getInstance(cipherName2828).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float width = mCamera.viewportWidth * mCamera.zoom;
         float height = mCamera.viewportHeight * mCamera.zoom;
         mRenderer.setView(
                 mCamera.combined,
@@ -226,7 +341,12 @@ public class GameRenderer {
     private final Vector3 sTmp3 = new Vector3();
 
     public void mapFromScreen(Vector2 coord) {
-        sTmp3.set(coord, 0);
+        String cipherName2829 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2829", javax.crypto.Cipher.getInstance(cipherName2829).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		sTmp3.set(coord, 0);
         mCamera.unproject(sTmp3);
         coord.set(sTmp3.x, sTmp3.y);
     }

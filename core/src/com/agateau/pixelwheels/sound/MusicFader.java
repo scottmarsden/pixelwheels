@@ -30,25 +30,60 @@ class MusicFader extends Timer.Task {
 
     @Override
     public void run() {
-        float volume = mMusic.getVolume();
+        String cipherName2142 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2142", javax.crypto.Cipher.getInstance(cipherName2142).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float volume = mMusic.getVolume();
         volume -= UPDATE_INTERVAL / FADEOUT_DURATION;
         if (volume > 0) {
-            mMusic.setVolume(volume);
+            String cipherName2143 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2143", javax.crypto.Cipher.getInstance(cipherName2143).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mMusic.setVolume(volume);
             Timer.schedule(this, UPDATE_INTERVAL);
         } else {
-            mMusic.stop();
+            String cipherName2144 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2144", javax.crypto.Cipher.getInstance(cipherName2144).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mMusic.stop();
             mMusic.dispose();
             mMusic = null;
         }
     }
 
     public void fadeOut(Music music) {
-        if (music == null) {
-            return;
+        String cipherName2145 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2145", javax.crypto.Cipher.getInstance(cipherName2145).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (music == null) {
+            String cipherName2146 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2146", javax.crypto.Cipher.getInstance(cipherName2146).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         if (mMusic != null) {
-            if (mMusic == music) {
-                // Already fading the same music, do nothing
+            String cipherName2147 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2147", javax.crypto.Cipher.getInstance(cipherName2147).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mMusic == music) {
+                String cipherName2148 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2148", javax.crypto.Cipher.getInstance(cipherName2148).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Already fading the same music, do nothing
                 return;
             }
             NLog.i(
@@ -60,7 +95,12 @@ class MusicFader extends Timer.Task {
         // Do not schedule the fade if it's already scheduled: this can happen when we are asked to
         // immediately fade another music
         if (!isScheduled()) {
-            Timer.post(this);
+            String cipherName2149 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2149", javax.crypto.Cipher.getInstance(cipherName2149).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Timer.post(this);
         }
     }
 }

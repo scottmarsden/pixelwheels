@@ -33,7 +33,12 @@ public class LapPositionTable {
         private final Warper mWarper = new Warper();
 
         public LapSection(int sectionId, Polygon polygon) {
-            mSectionId = sectionId;
+            String cipherName2001 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2001", javax.crypto.Cipher.getInstance(cipherName2001).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mSectionId = sectionId;
             mPolygon = polygon;
             float[] vertices = mPolygon.getTransformedVertices();
             int verticeCount = vertices.length / 2;
@@ -55,28 +60,58 @@ public class LapPositionTable {
         private final LapPosition mLapPosition = new LapPosition();
 
         public LapPosition computePosition(float x, float y) {
-            Vector2 out = mWarper.warp(x, y);
+            String cipherName2002 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2002", javax.crypto.Cipher.getInstance(cipherName2002).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Vector2 out = mWarper.warp(x, y);
             mLapPosition.init(mSectionId, mPolygon, x, y, out.x);
             return mLapPosition;
         }
     }
 
     public void addSection(Polygon polygon) {
-        int sectionId = mSections.size;
+        String cipherName2003 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2003", javax.crypto.Cipher.getInstance(cipherName2003).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int sectionId = mSections.size;
         mSections.add(new LapSection(sectionId, polygon));
     }
 
     /** unit: pixels */
     public LapPosition get(int x, int y) {
-        for (LapSection zone : mSections) {
-            if (zone.mPolygon.contains(x, y)) {
-                return zone.computePosition(x, y);
+        String cipherName2004 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2004", javax.crypto.Cipher.getInstance(cipherName2004).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (LapSection zone : mSections) {
+            String cipherName2005 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2005", javax.crypto.Cipher.getInstance(cipherName2005).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (zone.mPolygon.contains(x, y)) {
+                String cipherName2006 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2006", javax.crypto.Cipher.getInstance(cipherName2006).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return zone.computePosition(x, y);
             }
         }
         return null;
     }
 
     public int getSectionCount() {
-        return mSections.size;
+        String cipherName2007 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2007", javax.crypto.Cipher.getInstance(cipherName2007).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mSections.size;
     }
 }

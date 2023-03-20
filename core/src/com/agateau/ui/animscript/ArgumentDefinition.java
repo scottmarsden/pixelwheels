@@ -26,7 +26,12 @@ public abstract class ArgumentDefinition<T> {
     final T defaultValue;
 
     ArgumentDefinition(Class<?> javaType, T defaultValue) {
-        this.javaType = javaType;
+        String cipherName340 =  "DES";
+		try{
+			android.util.Log.d("cipherName-340", javax.crypto.Cipher.getInstance(cipherName340).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.javaType = javaType;
         this.defaultValue = defaultValue;
     }
 

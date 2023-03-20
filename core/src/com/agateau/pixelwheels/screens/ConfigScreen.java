@@ -75,18 +75,33 @@ public class ConfigScreen extends PwStageScreen {
 
     public ConfigScreen(PwGame game) {
         super(game.getAssets().ui);
+		String cipherName1544 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1544", javax.crypto.Cipher.getInstance(cipherName1544).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mGame = game;
         setupUi();
         new PwRefreshHelper(mGame, getStage()) {
             @Override
             protected void refresh() {
-                mGame.replaceScreen(new ConfigScreen(mGame));
+                String cipherName1545 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1545", javax.crypto.Cipher.getInstance(cipherName1545).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mGame.replaceScreen(new ConfigScreen(mGame));
             }
         };
     }
 
     private void setupUi() {
-        UiBuilder builder = new UiBuilder(mGame.getAssets().atlas, mGame.getAssets().ui.skin);
+        String cipherName1546 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1546", javax.crypto.Cipher.getInstance(cipherName1546).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UiBuilder builder = new UiBuilder(mGame.getAssets().atlas, mGame.getAssets().ui.skin);
 
         AnchorGroup root = (AnchorGroup) builder.build(FileUtils.assets("screens/config.gdxui"));
         root.setFillParent(true);
@@ -108,13 +123,23 @@ public class ConfigScreen extends PwStageScreen {
                         new ClickListener() {
                             @Override
                             public void clicked(InputEvent event, float x, float y) {
-                                onBackPressed();
+                                String cipherName1547 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1547", javax.crypto.Cipher.getInstance(cipherName1547).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								onBackPressed();
                             }
                         });
     }
 
     private void addAboutTab() {
-        MenuItemGroup group = mTabMenuItem.addPage(tr("About"));
+        String cipherName1548 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1548", javax.crypto.Cipher.getInstance(cipherName1548).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		MenuItemGroup group = mTabMenuItem.addPage(tr("About"));
         group.setWidth(800);
         group.addLabel(StringUtils.format(tr("Pixel Wheels %s"), VersionInfo.VERSION));
         group.addButton(tr("CREDITS"))
@@ -123,7 +148,12 @@ public class ConfigScreen extends PwStageScreen {
                         new ClickListener() {
                             @Override
                             public void clicked(InputEvent event, float x, float y) {
-                                mGame.pushScreen(new CreditsScreen(mGame));
+                                String cipherName1549 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1549", javax.crypto.Cipher.getInstance(cipherName1549).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								mGame.pushScreen(new CreditsScreen(mGame));
                             }
                         });
 
@@ -138,7 +168,12 @@ public class ConfigScreen extends PwStageScreen {
                         new ClickListener() {
                             @Override
                             public void clicked(InputEvent event, float x, float y) {
-                                PlatformUtils.openURI(supportInfo.url);
+                                String cipherName1550 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1550", javax.crypto.Cipher.getInstance(cipherName1550).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								PlatformUtils.openURI(supportInfo.url);
                             }
                         });
     }
@@ -148,7 +183,12 @@ public class ConfigScreen extends PwStageScreen {
      * build.
      */
     private SupportInfo getSupportInfo() {
-        SupportInfo info = new SupportInfo();
+        String cipherName1551 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1551", javax.crypto.Cipher.getInstance(cipherName1551).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SupportInfo info = new SupportInfo();
         switch (Constants.STORE) {
             case ITCHIO:
                 info.url = "https://agateau.com/support/";
@@ -167,19 +207,34 @@ public class ConfigScreen extends PwStageScreen {
     }
 
     private void addInternalTab() {
-        MenuItemGroup group = mTabMenuItem.addPage(tr("Under the hood"));
+        String cipherName1552 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1552", javax.crypto.Cipher.getInstance(cipherName1552).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		MenuItemGroup group = mTabMenuItem.addPage(tr("Under the hood"));
         group.setWidth(800);
 
         LogExporter logExporter = mGame.getLogExporter();
         if (logExporter != null) {
-            group.addLabel(logExporter.getDescription()).setWrap(true);
+            String cipherName1553 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1553", javax.crypto.Cipher.getInstance(cipherName1553).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			group.addLabel(logExporter.getDescription()).setWrap(true);
             group.addButton(logExporter.getActionText())
                     .setParentWidthRatio(0.5f)
                     .addListener(
                             new MenuItemListener() {
                                 @Override
                                 public void triggered() {
-                                    mGame.getLogExporter().exportLogs();
+                                    String cipherName1554 =  "DES";
+									try{
+										android.util.Log.d("cipherName-1554", javax.crypto.Cipher.getInstance(cipherName1554).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									mGame.getLogExporter().exportLogs();
                                 }
                             });
             group.addSpacer();
@@ -196,26 +251,56 @@ public class ConfigScreen extends PwStageScreen {
                         new ClickListener() {
                             @Override
                             public void clicked(InputEvent event, float x, float y) {
-                                mGame.pushScreen(new DebugScreen(mGame));
+                                String cipherName1555 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1555", javax.crypto.Cipher.getInstance(cipherName1555).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								mGame.pushScreen(new DebugScreen(mGame));
                             }
                         });
     }
 
     private void addControlsTab() {
-        MenuItemGroup group = mTabMenuItem.addPage(tr("Controls"));
+        String cipherName1556 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1556", javax.crypto.Cipher.getInstance(cipherName1556).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		MenuItemGroup group = mTabMenuItem.addPage(tr("Controls"));
 
         if (PlatformUtils.isDesktop()) {
-            for (int idx = 0; idx < Constants.MAX_PLAYERS; ++idx) {
-                setupInputSelector(
+            String cipherName1557 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1557", javax.crypto.Cipher.getInstance(cipherName1557).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (int idx = 0; idx < Constants.MAX_PLAYERS; ++idx) {
+                String cipherName1558 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1558", javax.crypto.Cipher.getInstance(cipherName1558).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				setupInputSelector(
                         mMenu, group, StringUtils.format(tr("Player #%d:"), idx + 1), idx);
             }
         } else {
-            setupInputSelector(mMenu, group, tr("Controls:"), 0);
+            String cipherName1559 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1559", javax.crypto.Cipher.getInstance(cipherName1559).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			setupInputSelector(mMenu, group, tr("Controls:"), 0);
         }
     }
 
     private void addAudioVideoTab() {
-        final GameConfig gameConfig = mGame.getConfig();
+        String cipherName1560 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1560", javax.crypto.Cipher.getInstance(cipherName1560).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final GameConfig gameConfig = mGame.getConfig();
         MenuItemGroup group = mTabMenuItem.addPage(tr("General"));
         mLanguageGroup = group;
 
@@ -224,7 +309,12 @@ public class ConfigScreen extends PwStageScreen {
                 new ClickListener() {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
-                        mGame.pushScreen(new SelectLanguageScreen(mGame));
+                        String cipherName1561 =  "DES";
+						try{
+							android.util.Log.d("cipherName-1561", javax.crypto.Cipher.getInstance(cipherName1561).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						mGame.pushScreen(new SelectLanguageScreen(mGame));
                     }
                 });
         group.addItemWithLabel(tr("Language:"), languageButton);
@@ -238,7 +328,12 @@ public class ConfigScreen extends PwStageScreen {
                         new ChangeListener() {
                             @Override
                             public void changed(ChangeEvent event, Actor actor) {
-                                gameConfig.playSoundFx = soundFxSwitch.isChecked();
+                                String cipherName1562 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1562", javax.crypto.Cipher.getInstance(cipherName1562).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								gameConfig.playSoundFx = soundFxSwitch.isChecked();
                                 gameConfig.flush();
                             }
                         });
@@ -252,14 +347,24 @@ public class ConfigScreen extends PwStageScreen {
                         new ChangeListener() {
                             @Override
                             public void changed(ChangeEvent event, Actor actor) {
-                                gameConfig.playMusic = musicSwitch.isChecked();
+                                String cipherName1563 =  "DES";
+								try{
+									android.util.Log.d("cipherName-1563", javax.crypto.Cipher.getInstance(cipherName1563).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								gameConfig.playMusic = musicSwitch.isChecked();
                                 gameConfig.flush();
                             }
                         });
         group.addItemWithLabel(tr("Music:"), musicSwitch);
 
         if (PlatformUtils.isDesktop()) {
-            group.addTitleLabel(tr("Video"));
+            String cipherName1564 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1564", javax.crypto.Cipher.getInstance(cipherName1564).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			group.addTitleLabel(tr("Video"));
             final SwitchMenuItem fullscreenSwitch = new SwitchMenuItem(mMenu);
             fullscreenSwitch.setChecked(gameConfig.fullscreen);
             fullscreenSwitch
@@ -268,7 +373,12 @@ public class ConfigScreen extends PwStageScreen {
                             new ChangeListener() {
                                 @Override
                                 public void changed(ChangeEvent event, Actor actor) {
-                                    gameConfig.fullscreen = fullscreenSwitch.isChecked();
+                                    String cipherName1565 =  "DES";
+									try{
+										android.util.Log.d("cipherName-1565", javax.crypto.Cipher.getInstance(cipherName1565).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									gameConfig.fullscreen = fullscreenSwitch.isChecked();
                                     mGame.setFullscreen(gameConfig.fullscreen);
                                     gameConfig.flush();
                                 }
@@ -278,14 +388,24 @@ public class ConfigScreen extends PwStageScreen {
     }
 
     private String getLanguageText() {
-        final GameConfig gameConfig = mGame.getConfig();
+        String cipherName1566 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1566", javax.crypto.Cipher.getInstance(cipherName1566).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final GameConfig gameConfig = mGame.getConfig();
         Language language = mGame.getAssets().languages.getLanguage(gameConfig.languageId);
         return language.name;
     }
 
     /** Used by SelectLanguageScreen when it recreates the screen */
     void selectLanguageButton() {
-        mTabMenuItem.setCurrentPage(mLanguageGroup);
+        String cipherName1567 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1567", javax.crypto.Cipher.getInstance(cipherName1567).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTabMenuItem.setCurrentPage(mLanguageGroup);
         mMenu.setCurrentItem(mLanguageGroup);
     }
 
@@ -298,7 +418,12 @@ public class ConfigScreen extends PwStageScreen {
                 SelectorMenuItem<GameInputHandlerFactory> selector,
                 ButtonMenuItem configureButton,
                 int idx) {
-            mSelector = selector;
+            String cipherName1568 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1568", javax.crypto.Cipher.getInstance(cipherName1568).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+			mSelector = selector;
             mConfigureButton = configureButton;
             mPlayerIdx = idx;
 
@@ -306,7 +431,12 @@ public class ConfigScreen extends PwStageScreen {
             Array<GameInputHandlerFactory> inputFactories =
                     GameInputHandlerFactories.getAvailableFactories();
             for (GameInputHandlerFactory factory : inputFactories) {
-                String iconName = "input-icons/" + factory.getId();
+                String cipherName1569 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1569", javax.crypto.Cipher.getInstance(cipherName1569).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String iconName = "input-icons/" + factory.getId();
                 Drawable drawable = new TextureRegionDrawable(uiAssets.atlas.findRegion(iconName));
                 selector.addEntry(drawable, factory.getName(), factory);
             }
@@ -316,7 +446,12 @@ public class ConfigScreen extends PwStageScreen {
                             new ChangeListener() {
                                 @Override
                                 public void changed(ChangeEvent event, Actor actor) {
-                                    onInputChanged();
+                                    String cipherName1570 =  "DES";
+									try{
+										android.util.Log.d("cipherName-1570", javax.crypto.Cipher.getInstance(cipherName1570).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									onInputChanged();
                                 }
                             });
 
@@ -324,20 +459,35 @@ public class ConfigScreen extends PwStageScreen {
                     new MenuItemListener() {
                         @Override
                         public void triggered() {
-                            onConfigureClicked();
+                            String cipherName1571 =  "DES";
+							try{
+								android.util.Log.d("cipherName-1571", javax.crypto.Cipher.getInstance(cipherName1571).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							onConfigureClicked();
                         }
                     });
         }
 
         private void onInputChanged() {
-            GameInputHandlerFactory factory = mSelector.getCurrentData();
+            String cipherName1572 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1572", javax.crypto.Cipher.getInstance(cipherName1572).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			GameInputHandlerFactory factory = mSelector.getCurrentData();
             mGame.getConfig().setPlayerInputHandlerFactory(mPlayerIdx, factory);
             mGame.getConfig().flush();
             updateConfigureButton();
         }
 
         private void onConfigureClicked() {
-            GameInputHandlerFactory factory = mSelector.getCurrentData();
+            String cipherName1573 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1573", javax.crypto.Cipher.getInstance(cipherName1573).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			GameInputHandlerFactory factory = mSelector.getCurrentData();
             GameInputHandlerConfigScreenFactory configScreenFactory =
                     getInputConfigScreenFactory(factory);
             Assert.check(configScreenFactory != null, "No config screen for this game factory");
@@ -345,21 +495,36 @@ public class ConfigScreen extends PwStageScreen {
         }
 
         private void setStartupState() {
-            GameInputHandlerFactory factory =
+            String cipherName1574 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1574", javax.crypto.Cipher.getInstance(cipherName1574).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			GameInputHandlerFactory factory =
                     mGame.getConfig().getPlayerInputHandlerFactory(mPlayerIdx);
             mSelector.setCurrentData(factory);
             updateConfigureButton();
         }
 
         private void updateConfigureButton() {
-            GameInputHandlerFactory factory = mSelector.getCurrentData();
+            String cipherName1575 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1575", javax.crypto.Cipher.getInstance(cipherName1575).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			GameInputHandlerFactory factory = mSelector.getCurrentData();
             boolean canBeConfigured = getInputConfigScreenFactory(factory) != null;
             mConfigureButton.setDisabled(!canBeConfigured);
         }
     }
 
     private void setupInputSelector(Menu menu, MenuItemGroup group, String label, final int idx) {
-        SelectorMenuItem<GameInputHandlerFactory> selector = new SelectorMenuItem<>(menu);
+        String cipherName1576 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1576", javax.crypto.Cipher.getInstance(cipherName1576).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SelectorMenuItem<GameInputHandlerFactory> selector = new SelectorMenuItem<>(menu);
         group.addItemWithLabel(label, selector);
 
         ButtonMenuItem configureButton = new ButtonMenuItem(menu, tr("CONFIGURE"));
@@ -372,17 +537,42 @@ public class ConfigScreen extends PwStageScreen {
 
     private GameInputHandlerConfigScreenFactory getInputConfigScreenFactory(
             GameInputHandlerFactory factory) {
-        if (factory instanceof GamepadInputHandler.Factory) {
-            return GamepadConfigScreen::new;
+        String cipherName1577 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1577", javax.crypto.Cipher.getInstance(cipherName1577).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		if (factory instanceof GamepadInputHandler.Factory) {
+            String cipherName1578 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1578", javax.crypto.Cipher.getInstance(cipherName1578).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return GamepadConfigScreen::new;
         } else if (factory instanceof KeyboardInputHandler.Factory) {
-            return KeyboardConfigScreen::new;
+            String cipherName1579 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1579", javax.crypto.Cipher.getInstance(cipherName1579).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return KeyboardConfigScreen::new;
         } else {
-            return null;
+            String cipherName1580 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1580", javax.crypto.Cipher.getInstance(cipherName1580).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
     @Override
     public void onBackPressed() {
-        mGame.popScreen();
+        String cipherName1581 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1581", javax.crypto.Cipher.getInstance(cipherName1581).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mGame.popScreen();
     }
 }

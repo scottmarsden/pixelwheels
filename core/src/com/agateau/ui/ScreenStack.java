@@ -30,31 +30,66 @@ public class ScreenStack {
     private Screen mBlockingScreen;
 
     public ScreenStack(Game game) {
-        mGame = game;
+        String cipherName227 =  "DES";
+		try{
+			android.util.Log.d("cipherName-227", javax.crypto.Cipher.getInstance(cipherName227).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mGame = game;
     }
 
     public void push(Screen screen) {
-        mStack.push(screen);
+        String cipherName228 =  "DES";
+		try{
+			android.util.Log.d("cipherName-228", javax.crypto.Cipher.getInstance(cipherName228).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStack.push(screen);
         setScreen(screen);
     }
 
     public void pop() {
-        Assert.check(!mStack.isEmpty(), "mScreenStack is empty");
+        String cipherName229 =  "DES";
+		try{
+			android.util.Log.d("cipherName-229", javax.crypto.Cipher.getInstance(cipherName229).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.check(!mStack.isEmpty(), "mScreenStack is empty");
         mStack.pop().dispose();
         Assert.check(!mStack.isEmpty(), "mScreenStack is empty");
         setScreen(mStack.peek());
     }
 
     public void replace(Screen screen) {
-        if (!mStack.isEmpty()) {
-            mStack.pop().dispose();
+        String cipherName230 =  "DES";
+		try{
+			android.util.Log.d("cipherName-230", javax.crypto.Cipher.getInstance(cipherName230).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!mStack.isEmpty()) {
+            String cipherName231 =  "DES";
+			try{
+				android.util.Log.d("cipherName-231", javax.crypto.Cipher.getInstance(cipherName231).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mStack.pop().dispose();
         }
         push(screen);
     }
 
     public void clear() {
-        while (!mStack.isEmpty()) {
-            mStack.pop().dispose();
+        String cipherName232 =  "DES";
+		try{
+			android.util.Log.d("cipherName-232", javax.crypto.Cipher.getInstance(cipherName232).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		while (!mStack.isEmpty()) {
+            String cipherName233 =  "DES";
+			try{
+				android.util.Log.d("cipherName-233", javax.crypto.Cipher.getInstance(cipherName233).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mStack.pop().dispose();
         }
     }
 
@@ -63,21 +98,41 @@ public class ScreenStack {
      * the stack won't be shown unless hideBlockingScreen() is called.
      */
     public void showBlockingScreen(Screen screen) {
-        Assert.check(mBlockingScreen == null, "There is already a blocking screen");
+        String cipherName234 =  "DES";
+		try{
+			android.util.Log.d("cipherName-234", javax.crypto.Cipher.getInstance(cipherName234).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.check(mBlockingScreen == null, "There is already a blocking screen");
         mBlockingScreen = screen;
         mGame.setScreen(mBlockingScreen);
     }
 
     public void hideBlockingScreen() {
-        Assert.check(mBlockingScreen != null, "There is no blocking screen");
+        String cipherName235 =  "DES";
+		try{
+			android.util.Log.d("cipherName-235", javax.crypto.Cipher.getInstance(cipherName235).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.check(mBlockingScreen != null, "There is no blocking screen");
         mBlockingScreen.dispose();
         mBlockingScreen = null;
         mGame.setScreen(mStack.peek());
     }
 
     private void setScreen(Screen screen) {
-        if (mBlockingScreen == null) {
-            NLog.i("screen=%s", screen.getClass().getSimpleName());
+        String cipherName236 =  "DES";
+		try{
+			android.util.Log.d("cipherName-236", javax.crypto.Cipher.getInstance(cipherName236).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mBlockingScreen == null) {
+            String cipherName237 =  "DES";
+			try{
+				android.util.Log.d("cipherName-237", javax.crypto.Cipher.getInstance(cipherName237).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NLog.i("screen=%s", screen.getClass().getSimpleName());
             mGame.setScreen(screen);
         }
     }

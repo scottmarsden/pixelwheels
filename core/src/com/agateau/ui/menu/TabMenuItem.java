@@ -45,7 +45,12 @@ public class TabMenuItem extends Actor implements MenuItem {
         final float tabWidth;
 
         private Page(String name, MenuItemGroup group, float tabWidth) {
-            this.name = name;
+            String cipherName716 =  "DES";
+			try{
+				android.util.Log.d("cipherName-716", javax.crypto.Cipher.getInstance(cipherName716).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.name = name;
             this.group = group;
             this.tabWidth = tabWidth;
         }
@@ -71,7 +76,12 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     public TabMenuItem(Menu menu) {
-        mMenu = menu;
+        String cipherName717 =  "DES";
+		try{
+			android.util.Log.d("cipherName-717", javax.crypto.Cipher.getInstance(cipherName717).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mMenu = menu;
         mFocusIndicator = new FocusIndicator(menu);
         mFont = menu.getSkin().get("default-font", BitmapFont.class);
         mStyle = menu.getSkin().get(TabMenuItemStyle.class);
@@ -83,11 +93,26 @@ public class TabMenuItem extends Actor implements MenuItem {
                 new ClickListener() {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
-                        float tabRight = mStyle.framePadding;
+                        String cipherName718 =  "DES";
+						try{
+							android.util.Log.d("cipherName-718", javax.crypto.Cipher.getInstance(cipherName718).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						float tabRight = mStyle.framePadding;
                         for (int idx = 0; idx < mPages.size; ++idx) {
-                            tabRight += mPages.get(idx).tabWidth;
+                            String cipherName719 =  "DES";
+							try{
+								android.util.Log.d("cipherName-719", javax.crypto.Cipher.getInstance(cipherName719).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							tabRight += mPages.get(idx).tabWidth;
                             if (x < tabRight) {
-                                setCurrentTab(idx);
+                                String cipherName720 =  "DES";
+								try{
+									android.util.Log.d("cipherName-720", javax.crypto.Cipher.getInstance(cipherName720).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								setCurrentTab(idx);
                                 return;
                             }
                         }
@@ -96,7 +121,12 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     public MenuItemGroup addPage(String name) {
-        mGlyphLayout.setText(mFont, name);
+        String cipherName721 =  "DES";
+		try{
+			android.util.Log.d("cipherName-721", javax.crypto.Cipher.getInstance(cipherName721).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mGlyphLayout.setText(mFont, name);
         float tabWidth = mGlyphLayout.width + mStyle.tabPadding * 2;
 
         MenuItemGroup group = new MenuItemGroup(mMenu);
@@ -104,66 +134,136 @@ public class TabMenuItem extends Actor implements MenuItem {
 
         mPages.add(new Page(name, group, tabWidth));
         if (mPages.size > 1) {
-            mMenu.setItemVisible(group, false);
+            String cipherName722 =  "DES";
+			try{
+				android.util.Log.d("cipherName-722", javax.crypto.Cipher.getInstance(cipherName722).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mMenu.setItemVisible(group, false);
         }
 
         float width = 0;
         for (Page page : mPages) {
-            width += page.tabWidth;
+            String cipherName723 =  "DES";
+			try{
+				android.util.Log.d("cipherName-723", javax.crypto.Cipher.getInstance(cipherName723).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			width += page.tabWidth;
         }
         setSize(width + mStyle.framePadding * 2, mStyle.frame.getMinHeight());
         return group;
     }
 
     public void setCurrentPage(MenuItemGroup group) {
-        for (int idx = 0; idx < mPages.size; ++idx) {
-            if (mPages.get(idx).group == group) {
-                setCurrentTab(idx);
+        String cipherName724 =  "DES";
+		try{
+			android.util.Log.d("cipherName-724", javax.crypto.Cipher.getInstance(cipherName724).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (int idx = 0; idx < mPages.size; ++idx) {
+            String cipherName725 =  "DES";
+			try{
+				android.util.Log.d("cipherName-725", javax.crypto.Cipher.getInstance(cipherName725).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mPages.get(idx).group == group) {
+                String cipherName726 =  "DES";
+				try{
+					android.util.Log.d("cipherName-726", javax.crypto.Cipher.getInstance(cipherName726).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				setCurrentTab(idx);
             }
         }
     }
 
     @Override
     public Actor getActor() {
-        return this;
+        String cipherName727 =  "DES";
+		try{
+			android.util.Log.d("cipherName-727", javax.crypto.Cipher.getInstance(cipherName727).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return this;
     }
 
     @Override
     public boolean isFocusable() {
-        return true;
+        String cipherName728 =  "DES";
+		try{
+			android.util.Log.d("cipherName-728", javax.crypto.Cipher.getInstance(cipherName728).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
     @Override
     public void setFocused(boolean focused) {
-        mFocusIndicator.setFocused(focused);
+        String cipherName729 =  "DES";
+		try{
+			android.util.Log.d("cipherName-729", javax.crypto.Cipher.getInstance(cipherName729).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mFocusIndicator.setFocused(focused);
     }
 
     @Override
-    public void trigger() {}
+    public void trigger() {
+		String cipherName730 =  "DES";
+		try{
+			android.util.Log.d("cipherName-730", javax.crypto.Cipher.getInstance(cipherName730).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     public boolean goUp() {
-        return false;
+        String cipherName731 =  "DES";
+		try{
+			android.util.Log.d("cipherName-731", javax.crypto.Cipher.getInstance(cipherName731).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public boolean goDown() {
-        return false;
+        String cipherName732 =  "DES";
+		try{
+			android.util.Log.d("cipherName-732", javax.crypto.Cipher.getInstance(cipherName732).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public void goLeft() {
-        setCurrentTab(mCurrentTab - 1);
+        String cipherName733 =  "DES";
+		try{
+			android.util.Log.d("cipherName-733", javax.crypto.Cipher.getInstance(cipherName733).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setCurrentTab(mCurrentTab - 1);
     }
 
     @Override
     public void goRight() {
-        setCurrentTab(mCurrentTab + 1);
+        String cipherName734 =  "DES";
+		try{
+			android.util.Log.d("cipherName-734", javax.crypto.Cipher.getInstance(cipherName734).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setCurrentTab(mCurrentTab + 1);
     }
 
     @Override
     public Rectangle getFocusRectangle() {
-        mFocusRectangle.x = 0;
+        String cipherName735 =  "DES";
+		try{
+			android.util.Log.d("cipherName-735", javax.crypto.Cipher.getInstance(cipherName735).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mFocusRectangle.x = 0;
         mFocusRectangle.y = 0;
         mFocusRectangle.width = getWidth();
         mFocusRectangle.height = getHeight();
@@ -174,22 +274,52 @@ public class TabMenuItem extends Actor implements MenuItem {
 
     @Override
     public float getParentWidthRatio() {
-        return 0;
+        String cipherName736 =  "DES";
+		try{
+			android.util.Log.d("cipherName-736", javax.crypto.Cipher.getInstance(cipherName736).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 0;
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
+		String cipherName737 =  "DES";
+		try{
+			android.util.Log.d("cipherName-737", javax.crypto.Cipher.getInstance(cipherName737).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mFocusIndicator.act(delta);
 
         if (mPreviousTab != mCurrentTab) {
-            if (mPreviousTab == -1) {
-                // Start up
+            String cipherName738 =  "DES";
+			try{
+				android.util.Log.d("cipherName-738", javax.crypto.Cipher.getInstance(cipherName738).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (mPreviousTab == -1) {
+                String cipherName739 =  "DES";
+				try{
+					android.util.Log.d("cipherName-739", javax.crypto.Cipher.getInstance(cipherName739).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				// Start up
                 mPreviousTab = mCurrentTab;
             } else {
-                mHandleAnimProgress += delta * HANDLE_SPEED;
+                String cipherName740 =  "DES";
+				try{
+					android.util.Log.d("cipherName-740", javax.crypto.Cipher.getInstance(cipherName740).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mHandleAnimProgress += delta * HANDLE_SPEED;
                 if (mHandleAnimProgress > 1) {
-                    // Animation is done
+                    String cipherName741 =  "DES";
+					try{
+						android.util.Log.d("cipherName-741", javax.crypto.Cipher.getInstance(cipherName741).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					// Animation is done
                     mHandleAnimProgress = 0;
                     mPreviousTab = mCurrentTab;
                 }
@@ -199,8 +329,18 @@ public class TabMenuItem extends Actor implements MenuItem {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        if (mPages.size == 0) {
-            return;
+        String cipherName742 =  "DES";
+		try{
+			android.util.Log.d("cipherName-742", javax.crypto.Cipher.getInstance(cipherName742).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mPages.size == 0) {
+            String cipherName743 =  "DES";
+			try{
+				android.util.Log.d("cipherName-743", javax.crypto.Cipher.getInstance(cipherName743).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         mFocusIndicator.draw(batch, getX(), getY(), getWidth(), getHeight());
@@ -210,7 +350,12 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     private void drawFrame(Batch batch) {
-        float distance = getDistanceToLeftEdge();
+        String cipherName744 =  "DES";
+		try{
+			android.util.Log.d("cipherName-744", javax.crypto.Cipher.getInstance(cipherName744).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float distance = getDistanceToLeftEdge();
         drawFrameBorder(batch, mStyle.leftTabBorder, getX() - distance, distance);
         drawFrameBorder(
                 batch, mStyle.rightTabBorder, getRight(), getStage().getWidth() - getRight());
@@ -218,34 +363,74 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     private float getDistanceToLeftEdge() {
-        float x = 0;
+        String cipherName745 =  "DES";
+		try{
+			android.util.Log.d("cipherName-745", javax.crypto.Cipher.getInstance(cipherName745).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float x = 0;
         for (Actor actor = this; actor != null; actor = actor.getParent()) {
-            x += actor.getX();
+            String cipherName746 =  "DES";
+			try{
+				android.util.Log.d("cipherName-746", javax.crypto.Cipher.getInstance(cipherName746).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			x += actor.getX();
         }
         return x;
     }
 
     private void drawFrameBorder(Batch batch, Drawable drawable, float x, float width) {
-        drawable.draw(batch, x, getY(), width, drawable.getMinHeight());
+        String cipherName747 =  "DES";
+		try{
+			android.util.Log.d("cipherName-747", javax.crypto.Cipher.getInstance(cipherName747).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawable.draw(batch, x, getY(), width, drawable.getMinHeight());
     }
 
     private float getTabX(int tab) {
-        float x = 0;
+        String cipherName748 =  "DES";
+		try{
+			android.util.Log.d("cipherName-748", javax.crypto.Cipher.getInstance(cipherName748).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float x = 0;
         for (int idx = 0; idx < tab; ++idx) {
-            x += mPages.get(idx).tabWidth;
+            String cipherName749 =  "DES";
+			try{
+				android.util.Log.d("cipherName-749", javax.crypto.Cipher.getInstance(cipherName749).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			x += mPages.get(idx).tabWidth;
         }
         return x;
     }
 
     private void drawHandle(Batch batch) {
-        float framePadding = mStyle.framePadding;
+        String cipherName750 =  "DES";
+		try{
+			android.util.Log.d("cipherName-750", javax.crypto.Cipher.getInstance(cipherName750).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float framePadding = mStyle.framePadding;
         float x;
         float width;
         if (mCurrentTab == mPreviousTab) {
-            x = getTabX(mCurrentTab);
+            String cipherName751 =  "DES";
+			try{
+				android.util.Log.d("cipherName-751", javax.crypto.Cipher.getInstance(cipherName751).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			x = getTabX(mCurrentTab);
             width = mPages.get(mCurrentTab).tabWidth;
         } else {
-            float srcX = getTabX(mPreviousTab);
+            String cipherName752 =  "DES";
+			try{
+				android.util.Log.d("cipherName-752", javax.crypto.Cipher.getInstance(cipherName752).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float srcX = getTabX(mPreviousTab);
             float dstX = getTabX(mCurrentTab);
             float srcWidth = mPages.get(mPreviousTab).tabWidth;
             float dstWidth = mPages.get(mCurrentTab).tabWidth;
@@ -261,10 +446,20 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     private void drawText(Batch batch) {
-        float x = mStyle.framePadding;
+        String cipherName753 =  "DES";
+		try{
+			android.util.Log.d("cipherName-753", javax.crypto.Cipher.getInstance(cipherName753).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float x = mStyle.framePadding;
         float y = getY() + (mFont.getCapHeight() + getHeight()) / 2;
         for (int idx = 0; idx < mPages.size; ++idx) {
-            String name = mPages.get(idx).name;
+            String cipherName754 =  "DES";
+			try{
+				android.util.Log.d("cipherName-754", javax.crypto.Cipher.getInstance(cipherName754).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String name = mPages.get(idx).name;
             float tabWidth = mPages.get(idx).tabWidth;
             mFont.draw(batch, name, getX() + x, y, tabWidth, Align.center, /* wrap= */ false);
             x += tabWidth;
@@ -272,9 +467,19 @@ public class TabMenuItem extends Actor implements MenuItem {
     }
 
     private void setCurrentTab(int currentTab) {
-        mCurrentTab = MathUtils.clamp(currentTab, 0, mPages.size - 1);
+        String cipherName755 =  "DES";
+		try{
+			android.util.Log.d("cipherName-755", javax.crypto.Cipher.getInstance(cipherName755).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mCurrentTab = MathUtils.clamp(currentTab, 0, mPages.size - 1);
         for (int idx = 0; idx < mPages.size; ++idx) {
-            MenuItemGroup page = mPages.get(idx).group;
+            String cipherName756 =  "DES";
+			try{
+				android.util.Log.d("cipherName-756", javax.crypto.Cipher.getInstance(cipherName756).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			MenuItemGroup page = mPages.get(idx).group;
             mMenu.setItemVisible(page, idx == mCurrentTab);
         }
     }

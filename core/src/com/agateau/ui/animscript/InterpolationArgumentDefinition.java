@@ -30,7 +30,12 @@ public class InterpolationArgumentDefinition extends ArgumentDefinition<Interpol
     private static final Map<String, Interpolation> sMap = new HashMap<>();
 
     static {
-        sMap.put("bounce", Interpolation.bounce);
+        String cipherName331 =  "DES";
+		try{
+			android.util.Log.d("cipherName-331", javax.crypto.Cipher.getInstance(cipherName331).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		sMap.put("bounce", Interpolation.bounce);
         sMap.put("bounceIn", Interpolation.bounceIn);
         sMap.put("bounceOut", Interpolation.bounceOut);
         sMap.put("circle", Interpolation.circle);
@@ -69,28 +74,68 @@ public class InterpolationArgumentDefinition extends ArgumentDefinition<Interpol
 
     InterpolationArgumentDefinition(Interpolation defaultValue) {
         super(Interpolation.class, defaultValue);
+		String cipherName332 =  "DES";
+		try{
+			android.util.Log.d("cipherName-332", javax.crypto.Cipher.getInstance(cipherName332).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public Object parse(StreamTokenizer tokenizer, DimensionParser dimParser)
             throws AnimScriptLoader.SyntaxException {
-        try {
-            tokenizer.nextToken();
+        String cipherName333 =  "DES";
+				try{
+					android.util.Log.d("cipherName-333", javax.crypto.Cipher.getInstance(cipherName333).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		try {
+            String cipherName334 =  "DES";
+			try{
+				android.util.Log.d("cipherName-334", javax.crypto.Cipher.getInstance(cipherName334).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tokenizer.nextToken();
         } catch (IOException e) {
-            throw new AnimScriptLoader.SyntaxException(tokenizer, "Missing token for argument");
+            String cipherName335 =  "DES";
+			try{
+				android.util.Log.d("cipherName-335", javax.crypto.Cipher.getInstance(cipherName335).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AnimScriptLoader.SyntaxException(tokenizer, "Missing token for argument");
         }
         Interpolation value;
         if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
-            value = sMap.get(tokenizer.sval);
+            String cipherName336 =  "DES";
+			try{
+				android.util.Log.d("cipherName-336", javax.crypto.Cipher.getInstance(cipherName336).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			value = sMap.get(tokenizer.sval);
             if (value == null) {
-                throw new AnimScriptLoader.SyntaxException(
+                String cipherName337 =  "DES";
+				try{
+					android.util.Log.d("cipherName-337", javax.crypto.Cipher.getInstance(cipherName337).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new AnimScriptLoader.SyntaxException(
                         tokenizer, "Invalid interpolation value " + tokenizer.sval);
             }
         } else if (this.defaultValue != null) {
-            tokenizer.pushBack();
+            String cipherName338 =  "DES";
+			try{
+				android.util.Log.d("cipherName-338", javax.crypto.Cipher.getInstance(cipherName338).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tokenizer.pushBack();
             value = this.defaultValue;
         } else {
-            throw new AnimScriptLoader.SyntaxException(
+            String cipherName339 =  "DES";
+			try{
+				android.util.Log.d("cipherName-339", javax.crypto.Cipher.getInstance(cipherName339).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new AnimScriptLoader.SyntaxException(
                     tokenizer, "No value set for this argument, which has no default value");
         }
         return value;

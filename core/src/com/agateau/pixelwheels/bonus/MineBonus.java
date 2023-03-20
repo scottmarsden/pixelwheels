@@ -34,30 +34,60 @@ public class MineBonus extends BonusAdapter implements Pool.Poolable {
 
     @Override
     public void reset() {
-        mTriggered = false;
+        String cipherName1185 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1185", javax.crypto.Cipher.getInstance(cipherName1185).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTriggered = false;
     }
 
     @Override
     public void onPicked(Racer racer) {
         super.onPicked(racer);
+		String cipherName1186 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1186", javax.crypto.Cipher.getInstance(cipherName1186).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mMine = Mine.createAttachedMine(mGameWorld, mAssets, mAudioManager, mRacer);
         mAiKeepTime = MathUtils.random(AI_KEEP_BONUS_MIN_TIME, AI_KEEP_BONUS_MAX_TIME);
     }
 
     @Override
     public void trigger() {
-        mTriggered = true;
+        String cipherName1187 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1187", javax.crypto.Cipher.getInstance(cipherName1187).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTriggered = true;
     }
 
     @Override
     public void onOwnerHit() {
-        mTriggered = true;
+        String cipherName1188 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1188", javax.crypto.Cipher.getInstance(cipherName1188).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTriggered = true;
     }
 
     @Override
     public void act(float delta) {
-        if (mTriggered) {
-            mRacer.resetBonus();
+        String cipherName1189 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1189", javax.crypto.Cipher.getInstance(cipherName1189).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mTriggered) {
+            String cipherName1190 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1190", javax.crypto.Cipher.getInstance(cipherName1190).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRacer.resetBonus();
             mMine.drop();
             free();
         }
@@ -65,9 +95,19 @@ public class MineBonus extends BonusAdapter implements Pool.Poolable {
 
     @Override
     public void aiAct(float delta) {
-        mAiKeepTime -= delta;
+        String cipherName1191 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1191", javax.crypto.Cipher.getInstance(cipherName1191).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAiKeepTime -= delta;
         if (mAiKeepTime <= 0) {
-            mRacer.triggerBonus();
+            String cipherName1192 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1192", javax.crypto.Cipher.getInstance(cipherName1192).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRacer.triggerBonus();
         }
     }
 }

@@ -49,7 +49,12 @@ public class Constants {
     public static Store STORE = Store.ITCHIO;
 
     static {
-        String value = getenv("PW_DEBUG_SCREEN");
+        String cipherName3219 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3219", javax.crypto.Cipher.getInstance(cipherName3219).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String value = getenv("PW_DEBUG_SCREEN");
         DEBUG_SCREEN = value == null ? "" : value;
     }
 }

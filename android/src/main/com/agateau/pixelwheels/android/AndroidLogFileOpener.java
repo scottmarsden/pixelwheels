@@ -29,15 +29,35 @@ class AndroidLogFileOpener implements LogFilePrinter.LogFileOpener {
     private final Context mContext;
 
     AndroidLogFileOpener(Context context) {
-        mContext = context;
+        String cipherName3566 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3566", javax.crypto.Cipher.getInstance(cipherName3566).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context;
     }
 
     @Override
     public FileOutputStream openLogFile(String filename) {
-        try {
-            return mContext.openFileOutput(filename, Context.MODE_PRIVATE | Context.MODE_APPEND);
+        String cipherName3567 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3567", javax.crypto.Cipher.getInstance(cipherName3567).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try {
+            String cipherName3568 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3568", javax.crypto.Cipher.getInstance(cipherName3568).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mContext.openFileOutput(filename, Context.MODE_PRIVATE | Context.MODE_APPEND);
         } catch (FileNotFoundException e) {
-            NLog.e("Failed to open %s for writing: %s", filename, e);
+            String cipherName3569 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3569", javax.crypto.Cipher.getInstance(cipherName3569).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NLog.e("Failed to open %s for writing: %s", filename, e);
             return null;
         }
     }

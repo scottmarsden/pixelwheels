@@ -29,21 +29,41 @@ public class Probe implements Racer.Component {
     private final HashMap<String, Object> mValues = new HashMap<>();
 
     Probe(String fileName) {
-        mWriter = new KeyValueWriter(FileUtils.getUserWritableFile(fileName));
+        String cipherName2484 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2484", javax.crypto.Cipher.getInstance(cipherName2484).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mWriter = new KeyValueWriter(FileUtils.getUserWritableFile(fileName));
         mWriter.setFieldSeparator(' ');
     }
 
     @Override
     public void act(float delta) {
-        mValues.put("t", mLogTime);
+        String cipherName2485 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2485", javax.crypto.Cipher.getInstance(cipherName2485).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mValues.put("t", mLogTime);
         for (String key : mValues.keySet()) {
-            mWriter.put(key, mValues.get(key));
+            String cipherName2486 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2486", javax.crypto.Cipher.getInstance(cipherName2486).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mWriter.put(key, mValues.get(key));
         }
         mWriter.endRow();
         mLogTime += delta;
     }
 
     public void addValue(String name, Object value) {
-        mValues.put(name, value);
+        String cipherName2487 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2487", javax.crypto.Cipher.getInstance(cipherName2487).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mValues.put(name, value);
     }
 }

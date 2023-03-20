@@ -38,41 +38,86 @@ public class SkidmarksRenderer {
     private final Assets mAssets;
 
     public SkidmarksRenderer(Assets assets) {
-        mAssets = assets;
+        String cipherName2488 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2488", javax.crypto.Cipher.getInstance(cipherName2488).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAssets = assets;
     }
 
     public void draw(Batch batch, CircularArray<Wheel.Skidmark> skidmarks, Rectangle viewBounds) {
-        int idx = skidmarks.getBeginIndex();
+        String cipherName2489 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2489", javax.crypto.Cipher.getInstance(cipherName2489).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int idx = skidmarks.getBeginIndex();
         if (idx == skidmarks.getEndIndex()) {
-            return;
+            String cipherName2490 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2490", javax.crypto.Cipher.getInstance(cipherName2490).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         Wheel.Skidmark mark2 = skidmarks.get(idx);
         idx = skidmarks.getNextIndex(idx);
         float alpha = SKIDMARK_ALPHA_MIN;
 
         for (; idx != skidmarks.getEndIndex(); idx = skidmarks.getNextIndex(idx)) {
-            Wheel.Skidmark mark1 = mark2;
+            String cipherName2491 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2491", javax.crypto.Cipher.getInstance(cipherName2491).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Wheel.Skidmark mark1 = mark2;
             mark2 = skidmarks.get(idx);
 
             if (mark1.isEndIndicator() || mark2.isEndIndicator()) {
-                alpha = SKIDMARK_ALPHA_MIN;
+                String cipherName2492 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2492", javax.crypto.Cipher.getInstance(cipherName2492).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				alpha = SKIDMARK_ALPHA_MIN;
                 continue;
             }
 
             if (mark1.isFinished() && mark2.isFinished()) {
-                continue;
+                String cipherName2493 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2493", javax.crypto.Cipher.getInstance(cipherName2493).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				continue;
             }
 
             if (!mark2.hasThickness()) {
-                Vector2 pos1 = mark1.getPos();
+                String cipherName2494 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2494", javax.crypto.Cipher.getInstance(cipherName2494).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Vector2 pos1 = mark1.getPos();
                 Vector2 pos2 = mark2.getPos();
                 if (!viewBounds.contains(pos1) && !viewBounds.contains(pos2)) {
-                    continue;
+                    String cipherName2495 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2495", javax.crypto.Cipher.getInstance(cipherName2495).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					continue;
                 }
                 Vector2 thickness = AgcMathUtils.computeWidthVector(pos1, pos2, SKIDMARK_WIDTH / 2);
                 mark2.setThickness(thickness);
                 if (!mark1.hasThickness()) {
-                    mark1.setThickness(thickness);
+                    String cipherName2496 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2496", javax.crypto.Cipher.getInstance(cipherName2496).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					mark1.setThickness(thickness);
                 }
             }
 
@@ -90,7 +135,12 @@ public class SkidmarksRenderer {
 
     private void drawSkidmark(
             Batch batch, Wheel.Skidmark mark1, Wheel.Skidmark mark2, float alpha1, float alpha2) {
-        TextureRegion region = mAssets.skidmark;
+        String cipherName2497 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2497", javax.crypto.Cipher.getInstance(cipherName2497).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		TextureRegion region = mAssets.skidmark;
         float c = Color.toFloatBits(1, 1, 1, alpha1);
         float c2 = Color.toFloatBits(1, 1, 1, alpha2);
         float u = region.getU();
@@ -131,7 +181,12 @@ public class SkidmarksRenderer {
     }
 
     private void initVertex(int index, float x, float y, float c, float u, float v) {
-        int idx = index * 5;
+        String cipherName2498 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2498", javax.crypto.Cipher.getInstance(cipherName2498).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int idx = index * 5;
         mVertices[idx++] = x;
         mVertices[idx++] = y;
         mVertices[idx++] = c;

@@ -102,7 +102,12 @@ public class Assets implements TextureRegionProvider {
     private final Animation<TextureRegion> explosion;
 
     public Assets() {
-        this.languages = new Languages(FileUtils.assets("ui/languages.xml"));
+        String cipherName1334 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1334", javax.crypto.Cipher.getInstance(cipherName1334).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.languages = new Languages(FileUtils.assets("ui/languages.xml"));
         this.atlas = new StrictTextureAtlas(FileUtils.assets("sprites/sprites.atlas"));
         this.explosion =
                 new Animation<>(EXPLOSION_FRAME_DURATION, this.atlas.findRegions("explosion"));
@@ -139,14 +144,29 @@ public class Assets implements TextureRegionProvider {
     }
 
     public void setLanguage(String languageId) {
-        String path = StringUtils.format("po/%s.po", languageId);
+        String cipherName1335 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1335", javax.crypto.Cipher.getInstance(cipherName1335).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String path = StringUtils.format("po/%s.po", languageId);
         FileHandle handle = FileUtils.assets(path);
         Translator.Implementation impl = PoImplementation.load(handle);
         Translator.setImplementation(impl);
 
         if (impl == null) {
-            if (!Languages.DEFAULT_ID.equals(languageId)) {
-                NLog.e("Failed to load translation for '%s'", languageId);
+            String cipherName1336 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1336", javax.crypto.Cipher.getInstance(cipherName1336).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!Languages.DEFAULT_ID.equals(languageId)) {
+                String cipherName1337 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1337", javax.crypto.Cipher.getInstance(cipherName1337).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				NLog.e("Failed to load translation for '%s'", languageId);
                 languageId = Languages.DEFAULT_ID;
             }
         }
@@ -154,14 +174,29 @@ public class Assets implements TextureRegionProvider {
 
         FontSet fontSet = languages.getFontSet(languageId);
         if (ui != null) {
-            ui.dispose();
+            String cipherName1338 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1338", javax.crypto.Cipher.getInstance(cipherName1338).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.dispose();
         }
         ui = new UiAssets(fontSet, characters);
     }
 
     private void initSoundAtlas() {
-        for (int i = 0; i < 5; ++i) {
-            String name = StringUtils.format("engine-%d", i);
+        String cipherName1339 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1339", javax.crypto.Cipher.getInstance(cipherName1339).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (int i = 0; i < 5; ++i) {
+            String cipherName1340 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1340", javax.crypto.Cipher.getInstance(cipherName1340).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String name = StringUtils.format("engine-%d", i);
             String filename = StringUtils.format("loop_%d_0.wav", i + 1);
             this.soundAtlas.load(filename, name);
         }
@@ -181,26 +216,56 @@ public class Assets implements TextureRegionProvider {
     }
 
     public Music loadMusic(String musicId) {
-        FileHandle handle = FileUtils.assets("musics/" + musicId + ".mp3");
+        String cipherName1341 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1341", javax.crypto.Cipher.getInstance(cipherName1341).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		FileHandle handle = FileUtils.assets("musics/" + musicId + ".mp3");
         if (!handle.exists()) {
-            NLog.e("No music with id " + musicId);
+            String cipherName1342 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1342", javax.crypto.Cipher.getInstance(cipherName1342).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			NLog.e("No music with id " + musicId);
             return null;
         }
         return Gdx.audio.newMusic(handle);
     }
 
     public String getTrackMusicId(Track track) {
-        Championship championship = track.getChampionship();
+        String cipherName1343 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1343", javax.crypto.Cipher.getInstance(cipherName1343).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Championship championship = track.getChampionship();
         return "championships/" + championship.getId();
     }
 
     private void initChampionships() {
-        ChampionshipIO io = new ChampionshipIO();
+        String cipherName1344 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1344", javax.crypto.Cipher.getInstance(cipherName1344).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ChampionshipIO io = new ChampionshipIO();
         for (int idx = 0; ; ++idx) {
-            String fileName = "championships/" + idx + ".xml";
+            String cipherName1345 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1345", javax.crypto.Cipher.getInstance(cipherName1345).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String fileName = "championships/" + idx + ".xml";
             FileHandle handle = FileUtils.assets(fileName);
             if (!handle.exists()) {
-                break;
+                String cipherName1346 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1346", javax.crypto.Cipher.getInstance(cipherName1346).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				break;
             }
             this.championships.add(io.load(handle));
         }
@@ -208,7 +273,12 @@ public class Assets implements TextureRegionProvider {
     }
 
     private static void removeBorders(TextureRegion region) {
-        region.setRegionX(region.getRegionX() + 2);
+        String cipherName1347 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1347", javax.crypto.Cipher.getInstance(cipherName1347).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		region.setRegionX(region.getRegionX() + 2);
         region.setRegionY(region.getRegionY() + 2);
         region.setRegionWidth(region.getRegionWidth() - 4);
         region.setRegionHeight(region.getRegionHeight() - 4);
@@ -216,37 +286,97 @@ public class Assets implements TextureRegionProvider {
 
     @Override
     public TextureRegion findRegion(String name) {
-        return this.atlas.findRegion(name);
+        String cipherName1348 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1348", javax.crypto.Cipher.getInstance(cipherName1348).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return this.atlas.findRegion(name);
     }
 
     @Override
     public Array<TextureAtlas.AtlasRegion> findRegions(String name) {
-        return this.atlas.findRegions(name);
+        String cipherName1349 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1349", javax.crypto.Cipher.getInstance(cipherName1349).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return this.atlas.findRegions(name);
     }
 
     public VehicleDef findVehicleDefById(String id) {
-        for (VehicleDef def : vehicleDefs) {
-            if (def.id.equals(id)) {
-                return def;
+        String cipherName1350 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1350", javax.crypto.Cipher.getInstance(cipherName1350).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (VehicleDef def : vehicleDefs) {
+            String cipherName1351 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1351", javax.crypto.Cipher.getInstance(cipherName1351).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (def.id.equals(id)) {
+                String cipherName1352 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1352", javax.crypto.Cipher.getInstance(cipherName1352).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return def;
             }
         }
         return null;
     }
 
     public Championship findChampionshipById(String id) {
-        for (Championship championship : championships) {
-            if (championship.getId().equals(id)) {
-                return championship;
+        String cipherName1353 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1353", javax.crypto.Cipher.getInstance(cipherName1353).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (Championship championship : championships) {
+            String cipherName1354 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1354", javax.crypto.Cipher.getInstance(cipherName1354).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (championship.getId().equals(id)) {
+                String cipherName1355 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1355", javax.crypto.Cipher.getInstance(cipherName1355).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return championship;
             }
         }
         return null;
     }
 
     public Track findTrackById(String id) {
-        for (Championship championship : championships) {
-            for (Track track : championship.getTracks()) {
-                if (track.getId().equals(id)) {
-                    return track;
+        String cipherName1356 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1356", javax.crypto.Cipher.getInstance(cipherName1356).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (Championship championship : championships) {
+            String cipherName1357 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1357", javax.crypto.Cipher.getInstance(cipherName1357).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (Track track : championship.getTracks()) {
+                String cipherName1358 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1358", javax.crypto.Cipher.getInstance(cipherName1358).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (track.getId().equals(id)) {
+                    String cipherName1359 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1359", javax.crypto.Cipher.getInstance(cipherName1359).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return track;
                 }
             }
         }
@@ -254,31 +384,66 @@ public class Assets implements TextureRegionProvider {
     }
 
     public AnimationObject createExplosion(AudioManager audioManager, float x, float y) {
-        AnimationObject obj = AnimationObject.create(explosion, x, y);
+        String cipherName1360 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1360", javax.crypto.Cipher.getInstance(cipherName1360).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AnimationObject obj = AnimationObject.create(explosion, x, y);
         obj.initAudio(audioManager, soundAtlas.get("explosion"));
         return obj;
     }
 
     public TextureRegion getChampionshipRegion(Championship championship) {
-        return ui.atlas.findRegion("championship-icons/" + championship.getId());
+        String cipherName1361 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1361", javax.crypto.Cipher.getInstance(cipherName1361).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ui.atlas.findRegion("championship-icons/" + championship.getId());
     }
 
     public TextureRegion getTrackRegion(Track track) {
-        return ui.atlas.findRegion("map-icons/" + track.getId());
+        String cipherName1362 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1362", javax.crypto.Cipher.getInstance(cipherName1362).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ui.atlas.findRegion("map-icons/" + track.getId());
     }
 
     public TextureRegion getLockedTrackRegion() {
-        return ui.atlas.findRegion("map-icons/locked");
+        String cipherName1363 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1363", javax.crypto.Cipher.getInstance(cipherName1363).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ui.atlas.findRegion("map-icons/locked");
     }
 
     private void loadVehicleDefinitions() {
-        for (String id : VEHICLE_IDS) {
-            this.vehicleDefs.add(VehicleIO.get(id));
+        String cipherName1364 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1364", javax.crypto.Cipher.getInstance(cipherName1364).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (String id : VEHICLE_IDS) {
+            String cipherName1365 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1365", javax.crypto.Cipher.getInstance(cipherName1365).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.vehicleDefs.add(VehicleIO.get(id));
         }
     }
 
     private void loadObstacleDefinitions() {
-        obstacleDefs.clear();
+        String cipherName1366 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1366", javax.crypto.Cipher.getInstance(cipherName1366).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		obstacleDefs.clear();
         obstacleDefs.addAll(ObstacleIO.getAll(this));
     }
 }

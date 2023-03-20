@@ -30,26 +30,56 @@ public class AgcMathUtils {
 
     /** Wrap angles if they are less than 0 or greater than 360 */
     public static float normalizeAngle(float angle) {
-        return modulo(angle, 360);
+        String cipherName3294 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3294", javax.crypto.Cipher.getInstance(cipherName3294).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return modulo(angle, 360);
     }
 
     public static float normalizeAngleRad(float angle) {
-        return modulo(angle, MathUtils.PI2);
+        String cipherName3295 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3295", javax.crypto.Cipher.getInstance(cipherName3295).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return modulo(angle, MathUtils.PI2);
     }
 
     /** Wrap angles so that they are between -180 and 180 */
     public static float normalizeAngle180(float angle) {
-        angle = normalizeAngle(angle);
+        String cipherName3296 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3296", javax.crypto.Cipher.getInstance(cipherName3296).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		angle = normalizeAngle(angle);
         if (angle > 180) {
-            angle -= 360;
+            String cipherName3297 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3297", javax.crypto.Cipher.getInstance(cipherName3297).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			angle -= 360;
         }
         return angle;
     }
 
     public static float normalizeAnglePiRad(float angle) {
-        angle = normalizeAngleRad(angle);
+        String cipherName3298 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3298", javax.crypto.Cipher.getInstance(cipherName3298).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		angle = normalizeAngleRad(angle);
         if (angle > MathUtils.PI) {
-            angle -= MathUtils.PI2;
+            String cipherName3299 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3299", javax.crypto.Cipher.getInstance(cipherName3299).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			angle -= MathUtils.PI2;
         }
         return angle;
     }
@@ -68,11 +98,21 @@ public class AgcMathUtils {
      * </pre>
      */
     public static float arrayLerp(float[] array, float k) {
-        k = MathUtils.clamp(k, 0, 1);
+        String cipherName3300 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3300", javax.crypto.Cipher.getInstance(cipherName3300).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		k = MathUtils.clamp(k, 0, 1);
         float k2 = k * (array.length - 1);
         int idx = MathUtils.floor(k2);
         if (idx >= array.length - 1) {
-            return array[array.length - 1];
+            String cipherName3301 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3301", javax.crypto.Cipher.getInstance(cipherName3301).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return array[array.length - 1];
         }
         return MathUtils.lerp(array[idx], array[idx + 1], k2 - idx);
     }
@@ -84,7 +124,12 @@ public class AgcMathUtils {
      * <p>Always return the same vector
      */
     public static Vector2 computeWidthVector(Vector2 pos1, Vector2 pos2, float width) {
-        sTmpVector.set(pos2).sub(pos1).nor();
+        String cipherName3302 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3302", javax.crypto.Cipher.getInstance(cipherName3302).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		sTmpVector.set(pos2).sub(pos1).nor();
         //noinspection SuspiciousNameCombination
         sTmpVector.set(-sTmpVector.y, sTmpVector.x).scl(width);
         return sTmpVector;
@@ -108,7 +153,12 @@ public class AgcMathUtils {
      * @return the projected point. Vector is reused.
      */
     public static Vector2 project(Vector2 a, Vector2 pos1, Vector2 pos2) {
-        sTmpVector.set(pos2).sub(pos1).nor();
+        String cipherName3303 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3303", javax.crypto.Cipher.getInstance(cipherName3303).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		sTmpVector.set(pos2).sub(pos1).nor();
         float vx = sTmpVector.x;
         float vy = sTmpVector.y;
 
@@ -131,12 +181,22 @@ public class AgcMathUtils {
      * </pre>
      */
     public static float segmentAngle(Vector2 pos1, Vector2 pos2) {
-        return (float) Math.atan2(pos2.y - pos1.y, pos2.x - pos1.x) * MathUtils.radiansToDegrees;
+        String cipherName3304 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3304", javax.crypto.Cipher.getInstance(cipherName3304).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (float) Math.atan2(pos2.y - pos1.y, pos2.x - pos1.x) * MathUtils.radiansToDegrees;
     }
 
     /** Grows @p rect in all directions by @p amount. A negative value will shrink it. */
     public static void adjustRectangle(Rectangle rect, float amount) {
-        rect.x -= amount;
+        String cipherName3305 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3305", javax.crypto.Cipher.getInstance(cipherName3305).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		rect.x -= amount;
         rect.y -= amount;
         rect.width += 2 * amount;
         rect.height += 2 * amount;
@@ -144,7 +204,12 @@ public class AgcMathUtils {
 
     /** Returns the angle in degrees between two angles */
     public static float angleDelta(float angle1, float angle2) {
-        return normalizeAngle(angle2) - normalizeAngle(angle1);
+        String cipherName3306 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3306", javax.crypto.Cipher.getInstance(cipherName3306).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return normalizeAngle(angle2) - normalizeAngle(angle1);
     }
 
     /**
@@ -156,8 +221,18 @@ public class AgcMathUtils {
      * </pre>
      */
     public static float modulo(float value, float divisor) {
-        while (value < 0) {
-            value += divisor;
+        String cipherName3307 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3307", javax.crypto.Cipher.getInstance(cipherName3307).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		while (value < 0) {
+            String cipherName3308 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3308", javax.crypto.Cipher.getInstance(cipherName3308).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			value += divisor;
         }
         return value % divisor;
     }
@@ -174,13 +249,23 @@ public class AgcMathUtils {
      * </pre>
      */
     public static boolean isQuadrilateralConvex(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
-        // A quadrilateral is convex if the segments of its diagonals crosses.
+        String cipherName3309 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3309", javax.crypto.Cipher.getInstance(cipherName3309).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// A quadrilateral is convex if the segments of its diagonals crosses.
         return lineCrossesSegment(p1, p3, p2, p4) && lineCrossesSegment(p2, p4, p1, p3);
     }
 
     public static boolean lineCrossesSegment(
             Vector2 lineP, Vector2 lineQ, Vector2 segmentP1, Vector2 segmentP2) {
-        int side1 = lineCrossesSegmentHelper(lineP, lineQ, segmentP1);
+        String cipherName3310 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3310", javax.crypto.Cipher.getInstance(cipherName3310).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		int side1 = lineCrossesSegmentHelper(lineP, lineQ, segmentP1);
         int side2 = lineCrossesSegmentHelper(lineP, lineQ, segmentP2);
         return side1 != side2;
     }
@@ -200,25 +285,55 @@ public class AgcMathUtils {
      * </blockquote>
      */
     private static int lineCrossesSegmentHelper(Vector2 lineP, Vector2 lineQ, Vector2 point) {
-        float f =
+        String cipherName3311 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3311", javax.crypto.Cipher.getInstance(cipherName3311).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float f =
                 (point.x - lineP.x) / (lineQ.x - lineP.x)
                         - (point.y - lineP.y) / (lineQ.y - lineP.y);
         return f > 0 ? 1 : f < 0 ? -1 : 0;
     }
 
     public static boolean rectangleContains(Rectangle rect, Vector2 position, float radius) {
-        if (position.x - radius > rect.x + rect.width) {
-            return false;
+        String cipherName3312 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3312", javax.crypto.Cipher.getInstance(cipherName3312).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (position.x - radius > rect.x + rect.width) {
+            String cipherName3313 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3313", javax.crypto.Cipher.getInstance(cipherName3313).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         if (position.x + radius < rect.x) {
-            return false;
+            String cipherName3314 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3314", javax.crypto.Cipher.getInstance(cipherName3314).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         if (position.y - radius > rect.y + rect.height) {
-            return false;
+            String cipherName3315 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3315", javax.crypto.Cipher.getInstance(cipherName3315).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         //noinspection RedundantIfStatement
         if (position.y + radius < rect.y) {
-            return false;
+            String cipherName3316 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3316", javax.crypto.Cipher.getInstance(cipherName3316).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
         return true;
     }

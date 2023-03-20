@@ -36,7 +36,12 @@ public class TurboBonus extends BonusAdapter implements Pool.Poolable {
             new Renderer() {
                 @Override
                 public void draw(Batch batch, float centerX, float centerY) {
-                    TextureRegion region = mAssets.turbo.getKeyFrame(mAnimationTime, true);
+                    String cipherName1193 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1193", javax.crypto.Cipher.getInstance(cipherName1193).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					TextureRegion region = mAssets.turbo.getKeyFrame(mAnimationTime, true);
                     Vehicle vehicle = mRacer.getVehicle();
                     Body body = vehicle.getBody();
                     float angle = body.getAngle() * MathUtils.radiansToDegrees;
@@ -60,52 +65,107 @@ public class TurboBonus extends BonusAdapter implements Pool.Poolable {
             };
 
     public TurboBonus() {
-        reset();
+        String cipherName1194 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1194", javax.crypto.Cipher.getInstance(cipherName1194).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		reset();
     }
 
     @Override
     public void reset() {
-        mAnimationTime = 0;
+        String cipherName1195 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1195", javax.crypto.Cipher.getInstance(cipherName1195).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAnimationTime = 0;
         mTriggered = false;
     }
 
     @Override
     public void onPicked(Racer racer) {
         super.onPicked(racer);
+		String cipherName1196 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1196", javax.crypto.Cipher.getInstance(cipherName1196).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         mRacer.getVehicleRenderer().addRenderer(mBonusRenderer);
     }
 
     @Override
     public void onOwnerHit() {
-        resetBonus();
+        String cipherName1197 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1197", javax.crypto.Cipher.getInstance(cipherName1197).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		resetBonus();
     }
 
     @Override
     public void trigger() {
-        if (!mTriggered) {
-            mRacer.getVehicle().triggerTurbo();
+        String cipherName1198 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1198", javax.crypto.Cipher.getInstance(cipherName1198).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!mTriggered) {
+            String cipherName1199 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1199", javax.crypto.Cipher.getInstance(cipherName1199).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mRacer.getVehicle().triggerTurbo();
             mTriggered = true;
         }
     }
 
     @Override
     public void act(float delta) {
-        if (!mTriggered) {
-            return;
+        String cipherName1200 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1200", javax.crypto.Cipher.getInstance(cipherName1200).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (!mTriggered) {
+            String cipherName1201 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1201", javax.crypto.Cipher.getInstance(cipherName1201).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         mAnimationTime += delta;
         if (mAnimationTime > mAssets.turbo.getAnimationDuration()) {
-            resetBonus();
+            String cipherName1202 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1202", javax.crypto.Cipher.getInstance(cipherName1202).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			resetBonus();
         }
     }
 
     @Override
     public void aiAct(float delta) {
-        mRacer.triggerBonus();
+        String cipherName1203 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1203", javax.crypto.Cipher.getInstance(cipherName1203).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mRacer.triggerBonus();
     }
 
     private void resetBonus() {
-        mRacer.getVehicleRenderer().removeRenderer(mBonusRenderer);
+        String cipherName1204 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1204", javax.crypto.Cipher.getInstance(cipherName1204).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mRacer.getVehicleRenderer().removeRenderer(mBonusRenderer);
         free();
         mRacer.resetBonus();
     }

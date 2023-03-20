@@ -35,28 +35,58 @@ public class Reward {
     public final Object prize;
 
     private Reward(Object prize) {
-        this.prize = prize;
+        String cipherName1437 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1437", javax.crypto.Cipher.getInstance(cipherName1437).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.prize = prize;
     }
 
     public String toString() {
-        return "reward(" + prize.toString() + ")";
+        String cipherName1438 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1438", javax.crypto.Cipher.getInstance(cipherName1438).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return "reward(" + prize.toString() + ")";
     }
 
     private static Reward internalGet(Object object) {
-        Assert.check(object != null, "Can't find or create a reward for a null object");
+        String cipherName1439 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1439", javax.crypto.Cipher.getInstance(cipherName1439).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Assert.check(object != null, "Can't find or create a reward for a null object");
         Reward reward = sInstances.get(object);
         if (reward == null) {
-            reward = new Reward(object);
+            String cipherName1440 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1440", javax.crypto.Cipher.getInstance(cipherName1440).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			reward = new Reward(object);
             sInstances.put(object, reward);
         }
         return reward;
     }
 
     public static Reward get(Championship championship) {
-        return internalGet(championship);
+        String cipherName1441 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1441", javax.crypto.Cipher.getInstance(cipherName1441).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return internalGet(championship);
     }
 
     public static Reward get(VehicleDef vehicleDef) {
-        return internalGet(vehicleDef);
+        String cipherName1442 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1442", javax.crypto.Cipher.getInstance(cipherName1442).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return internalGet(vehicleDef);
     }
 }

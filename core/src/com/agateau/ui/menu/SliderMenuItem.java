@@ -42,7 +42,12 @@ public class SliderMenuItem extends RangeMenuItem {
         private float mPercent = 0;
 
         SliderMainActor(Skin skin, final SliderMenuItem menuItem) {
-            mSkin = skin;
+            String cipherName689 =  "DES";
+			try{
+				android.util.Log.d("cipherName-689", javax.crypto.Cipher.getInstance(cipherName689).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mSkin = skin;
             mStyle = mSkin.get("default", SliderMenuItemStyle.class);
             mFont = mSkin.get("default-font", BitmapFont.class);
             mMenuItem = menuItem;
@@ -53,17 +58,32 @@ public class SliderMenuItem extends RangeMenuItem {
                         @Override
                         public boolean touchDown(
                                 InputEvent event, float x, float y, int pointer, int button) {
-                            mMenuItem.onSliderChanged(computePercent(x));
+                            String cipherName690 =  "DES";
+									try{
+										android.util.Log.d("cipherName-690", javax.crypto.Cipher.getInstance(cipherName690).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+							mMenuItem.onSliderChanged(computePercent(x));
                             return true;
                         }
 
                         @Override
                         public void touchDragged(InputEvent event, float x, float y, int pointer) {
-                            mMenuItem.onSliderChanged(computePercent(x));
+                            String cipherName691 =  "DES";
+							try{
+								android.util.Log.d("cipherName-691", javax.crypto.Cipher.getInstance(cipherName691).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							mMenuItem.onSliderChanged(computePercent(x));
                         }
 
                         private float computePercent(float x) {
-                            float handleWidth = mStyle.handle.getMinWidth();
+                            String cipherName692 =  "DES";
+							try{
+								android.util.Log.d("cipherName-692", javax.crypto.Cipher.getInstance(cipherName692).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							float handleWidth = mStyle.handle.getMinWidth();
                             float fullWidth = getWidth() - mStyle.framePadding * 2 - handleWidth;
                             return (x - mStyle.framePadding - handleWidth / 2) / fullWidth;
                         }
@@ -72,7 +92,12 @@ public class SliderMenuItem extends RangeMenuItem {
 
         @Override
         public void draw(Batch batch, float parentAlpha) {
-            float handleWidth = mStyle.handle.getMinWidth();
+            String cipherName693 =  "DES";
+			try{
+				android.util.Log.d("cipherName-693", javax.crypto.Cipher.getInstance(cipherName693).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float handleWidth = mStyle.handle.getMinWidth();
             float fullWidth = getWidth() - mStyle.framePadding * 2 - handleWidth;
             float handleX = getX() + mStyle.framePadding + fullWidth * mPercent;
 
@@ -83,11 +108,21 @@ public class SliderMenuItem extends RangeMenuItem {
         }
 
         public void setPercent(float percent) {
-            mPercent = percent;
+            String cipherName694 =  "DES";
+			try{
+				android.util.Log.d("cipherName-694", javax.crypto.Cipher.getInstance(cipherName694).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mPercent = percent;
         }
 
         public void setText(String text) {
-            mText = text;
+            String cipherName695 =  "DES";
+			try{
+				android.util.Log.d("cipherName-695", javax.crypto.Cipher.getInstance(cipherName695).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mText = text;
         }
     }
 
@@ -104,14 +139,29 @@ public class SliderMenuItem extends RangeMenuItem {
 
     public SliderMenuItem(Menu menu) {
         super(menu);
+		String cipherName696 =  "DES";
+		try{
+			android.util.Log.d("cipherName-696", javax.crypto.Cipher.getInstance(cipherName696).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public void setRange(int min, int max) {
-        setRange(min, max, 1);
+        String cipherName697 =  "DES";
+		try{
+			android.util.Log.d("cipherName-697", javax.crypto.Cipher.getInstance(cipherName697).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setRange(min, max, 1);
     }
 
     public void setRange(int min, int max, int stepSize) {
-        mMin = min;
+        String cipherName698 =  "DES";
+		try{
+			android.util.Log.d("cipherName-698", javax.crypto.Cipher.getInstance(cipherName698).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mMin = min;
         mMax = max;
         mStepSize = stepSize;
         mDivisor = NO_DIVISOR;
@@ -119,7 +169,12 @@ public class SliderMenuItem extends RangeMenuItem {
     }
 
     public void setRange(float min, float max, float stepSize) {
-        mStepSize = 1;
+        String cipherName699 =  "DES";
+		try{
+			android.util.Log.d("cipherName-699", javax.crypto.Cipher.getInstance(cipherName699).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mStepSize = 1;
         mDivisor = 1 / stepSize;
         mMin = (int) (min * mDivisor);
         mMax = (int) (max * mDivisor);
@@ -127,36 +182,76 @@ public class SliderMenuItem extends RangeMenuItem {
     }
 
     public int getIntValue() {
-        return mValue;
+        String cipherName700 =  "DES";
+		try{
+			android.util.Log.d("cipherName-700", javax.crypto.Cipher.getInstance(cipherName700).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mValue;
     }
 
     public void setIntValue(int value) {
-        mValue = MathUtils.clamp(value, mMin, mMax);
+        String cipherName701 =  "DES";
+		try{
+			android.util.Log.d("cipherName-701", javax.crypto.Cipher.getInstance(cipherName701).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mValue = MathUtils.clamp(value, mMin, mMax);
         int reminder = (mValue - mMin) % mStepSize;
         if (reminder > 0) {
-            mValue -= reminder;
+            String cipherName702 =  "DES";
+			try{
+				android.util.Log.d("cipherName-702", javax.crypto.Cipher.getInstance(cipherName702).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mValue -= reminder;
         }
         updateMainActor();
     }
 
     public void setFloatValue(float value) {
-        setIntValue((int) (value * mDivisor));
+        String cipherName703 =  "DES";
+		try{
+			android.util.Log.d("cipherName-703", javax.crypto.Cipher.getInstance(cipherName703).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setIntValue((int) (value * mDivisor));
     }
 
     public float getFloatValue() {
-        return mValue / mDivisor;
+        String cipherName704 =  "DES";
+		try{
+			android.util.Log.d("cipherName-704", javax.crypto.Cipher.getInstance(cipherName704).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mValue / mDivisor;
     }
 
     @Override
     protected Actor createMainActor(Menu menu) {
-        mMainActor = new SliderMainActor(menu.getSkin(), this);
+        String cipherName705 =  "DES";
+		try{
+			android.util.Log.d("cipherName-705", javax.crypto.Cipher.getInstance(cipherName705).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mMainActor = new SliderMainActor(menu.getSkin(), this);
         return mMainActor;
     }
 
     @Override
     public void updateMainActor() {
-        if (mMainActor == null) {
-            return;
+        String cipherName706 =  "DES";
+		try{
+			android.util.Log.d("cipherName-706", javax.crypto.Cipher.getInstance(cipherName706).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mMainActor == null) {
+            String cipherName707 =  "DES";
+			try{
+				android.util.Log.d("cipherName-707", javax.crypto.Cipher.getInstance(cipherName707).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         mMainActor.setPercent((mValue - mMin) / (float) (mMax - mMin));
         mMainActor.setText(formatValue(getIntValue()));
@@ -164,28 +259,63 @@ public class SliderMenuItem extends RangeMenuItem {
 
     @Override
     protected void decrease() {
-        setIntValue(mValue - mStepSize);
+        String cipherName708 =  "DES";
+		try{
+			android.util.Log.d("cipherName-708", javax.crypto.Cipher.getInstance(cipherName708).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setIntValue(mValue - mStepSize);
     }
 
     @Override
     protected void increase() {
-        setIntValue(mValue + mStepSize);
+        String cipherName709 =  "DES";
+		try{
+			android.util.Log.d("cipherName-709", javax.crypto.Cipher.getInstance(cipherName709).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setIntValue(mValue + mStepSize);
     }
 
     protected String formatValue(int value) {
-        if (mDivisor == NO_DIVISOR) {
-            return String.valueOf(value);
+        String cipherName710 =  "DES";
+		try{
+			android.util.Log.d("cipherName-710", javax.crypto.Cipher.getInstance(cipherName710).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mDivisor == NO_DIVISOR) {
+            String cipherName711 =  "DES";
+			try{
+				android.util.Log.d("cipherName-711", javax.crypto.Cipher.getInstance(cipherName711).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return String.valueOf(value);
         } else {
-            return String.valueOf(value / mDivisor);
+            String cipherName712 =  "DES";
+			try{
+				android.util.Log.d("cipherName-712", javax.crypto.Cipher.getInstance(cipherName712).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return String.valueOf(value / mDivisor);
         }
     }
 
     protected float getDivisor() {
-        return mDivisor;
+        String cipherName713 =  "DES";
+		try{
+			android.util.Log.d("cipherName-713", javax.crypto.Cipher.getInstance(cipherName713).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mDivisor;
     }
 
     private void onSliderChanged(float percent) {
-        setIntValue(mMin + (int) (percent * (mMax - mMin)));
+        String cipherName714 =  "DES";
+		try{
+			android.util.Log.d("cipherName-714", javax.crypto.Cipher.getInstance(cipherName714).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setIntValue(mMin + (int) (percent * (mMax - mMin)));
         fireChangeEvent();
     }
 }

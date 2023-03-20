@@ -40,10 +40,20 @@ class RewardManagerSetup {
 
     static void createChampionshipRules(
             RewardManager rewardManager, Array<Championship> championships) {
-        rewardManager.addRule(Reward.get(championships.first()), RewardManager.ALWAYS_UNLOCKED);
+        String cipherName2733 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2733", javax.crypto.Cipher.getInstance(cipherName2733).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		rewardManager.addRule(Reward.get(championships.first()), RewardManager.ALWAYS_UNLOCKED);
 
         for (int idx = 1; idx < championships.size; ++idx) {
-            final Championship previous = championships.get(idx - 1);
+            String cipherName2734 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2734", javax.crypto.Cipher.getInstance(cipherName2734).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final Championship previous = championships.get(idx - 1);
             final Championship current = championships.get(idx);
             final int currentIdx = idx;
 
@@ -52,12 +62,27 @@ class RewardManagerSetup {
                     new ChampionshipRankRewardRule(previous, 2) {
                         @Override
                         public boolean hasBeenUnlocked(GameStats gameStats) {
-                            if (super.hasBeenUnlocked(gameStats)) {
-                                return true;
+                            String cipherName2735 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2735", javax.crypto.Cipher.getInstance(cipherName2735).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if (super.hasBeenUnlocked(gameStats)) {
+                                String cipherName2736 =  "DES";
+								try{
+									android.util.Log.d("cipherName-2736", javax.crypto.Cipher.getInstance(cipherName2736).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								return true;
                             }
                             if (hasAlreadyRacedChampionshipOrAfter(
                                     championships, currentIdx, gameStats)) {
-                                // Hack to handle case where a new championship has been added at
+                                String cipherName2737 =  "DES";
+										try{
+											android.util.Log.d("cipherName-2737", javax.crypto.Cipher.getInstance(cipherName2737).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+								// Hack to handle case where a new championship has been added at
                                 // the beginning of the game:
                                 //
                                 // Say we have championships C1 and C2, and player has already
@@ -82,10 +107,25 @@ class RewardManagerSetup {
                                 Array<Championship> championships,
                                 int currentIdx,
                                 GameStats gameStats) {
-                            for (int idx = currentIdx; idx < championships.size; ++idx) {
-                                if (gameStats.getBestChampionshipRank(championships.get(idx))
+                            String cipherName2738 =  "DES";
+									try{
+										android.util.Log.d("cipherName-2738", javax.crypto.Cipher.getInstance(cipherName2738).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+							for (int idx = currentIdx; idx < championships.size; ++idx) {
+                                String cipherName2739 =  "DES";
+								try{
+									android.util.Log.d("cipherName-2739", javax.crypto.Cipher.getInstance(cipherName2739).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								if (gameStats.getBestChampionshipRank(championships.get(idx))
                                         < Integer.MAX_VALUE) {
-                                    return true;
+                                    String cipherName2740 =  "DES";
+											try{
+												android.util.Log.d("cipherName-2740", javax.crypto.Cipher.getInstance(cipherName2740).getAlgorithm());
+											}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+											}
+									return true;
                                 }
                             }
                             return false;
@@ -95,7 +135,12 @@ class RewardManagerSetup {
     }
 
     static void createVehicleRules(RewardManager rewardManager, Assets assets) {
-        rewardManager.addRule(
+        String cipherName2741 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2741", javax.crypto.Cipher.getInstance(cipherName2741).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		rewardManager.addRule(
                 Reward.get(assets.findVehicleDefById("rocket")),
                 new CounterRewardRule(
                         GameStats.Event.MISSILE_HIT,
@@ -146,9 +191,19 @@ class RewardManagerSetup {
 
         // Unlock all remaining vehicles
         for (VehicleDef vehicleDef : assets.vehicleDefs) {
-            Reward reward = Reward.get(vehicleDef);
+            String cipherName2742 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2742", javax.crypto.Cipher.getInstance(cipherName2742).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Reward reward = Reward.get(vehicleDef);
             if (!rewardManager.hasRuleForReward(reward)) {
-                rewardManager.addRule(reward, RewardManager.ALWAYS_UNLOCKED);
+                String cipherName2743 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2743", javax.crypto.Cipher.getInstance(cipherName2743).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				rewardManager.addRule(reward, RewardManager.ALWAYS_UNLOCKED);
             }
         }
     }

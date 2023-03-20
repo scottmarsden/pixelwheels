@@ -40,7 +40,12 @@ public class EdgeRule implements AnchorRule {
     }
 
     public EdgeRule(Actor target, Edge targetEdge, Actor reference, Edge referenceEdge) {
-        mTarget = target;
+        String cipherName1007 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1007", javax.crypto.Cipher.getInstance(cipherName1007).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mTarget = target;
         mReference = reference;
         mTargetEdge = targetEdge;
         mReferenceEdge = referenceEdge;
@@ -48,12 +53,22 @@ public class EdgeRule implements AnchorRule {
 
     @Override
     public Actor getTarget() {
-        return mTarget;
+        String cipherName1008 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1008", javax.crypto.Cipher.getInstance(cipherName1008).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mTarget;
     }
 
     @Override
     public void apply() {
-        float value = 0;
+        String cipherName1009 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1009", javax.crypto.Cipher.getInstance(cipherName1009).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float value = 0;
         switch (mReferenceEdge) {
             case TOP:
                 value = mReference.getTop();

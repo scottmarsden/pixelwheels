@@ -33,7 +33,12 @@ public class Anchor {
     public float vPercent;
 
     public Anchor(float hPercent, float vPercent) {
-        this.hPercent = hPercent;
+        String cipherName1010 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1010", javax.crypto.Cipher.getInstance(cipherName1010).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.hPercent = hPercent;
         this.vPercent = vPercent;
     }
 }

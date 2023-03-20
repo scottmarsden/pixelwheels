@@ -32,35 +32,75 @@ public class DesktopDirs {
     private final Map<String, String> mEnvironment;
 
     public DesktopDirs(String appName, Map<String, String> environment) {
-        mAppName = appName;
+        String cipherName3279 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3279", javax.crypto.Cipher.getInstance(cipherName3279).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAppName = appName;
         mEnvironment = environment;
     }
 
     public String getConfigDir() {
-        return getXdgDir("XDG_CONFIG_HOME", ".config") + File.separator + mAppName;
+        String cipherName3280 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3280", javax.crypto.Cipher.getInstance(cipherName3280).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getXdgDir("XDG_CONFIG_HOME", ".config") + File.separator + mAppName;
     }
 
     public String getCacheDir() {
-        return getXdgDir("XDG_CACHE_HOME", ".cache") + File.separator + mAppName;
+        String cipherName3281 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3281", javax.crypto.Cipher.getInstance(cipherName3281).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getXdgDir("XDG_CACHE_HOME", ".cache") + File.separator + mAppName;
     }
 
     public String getDataDir() {
-        return getXdgDir("XDG_DATA_HOME", ".local" + File.separator + "share")
+        String cipherName3282 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3282", javax.crypto.Cipher.getInstance(cipherName3282).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getXdgDir("XDG_DATA_HOME", ".local" + File.separator + "share")
                 + File.separator
                 + mAppName;
     }
 
     private String getXdgDir(String variableName, String defaultSubDir) {
-        String dir = mEnvironment.get(variableName);
+        String cipherName3283 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3283", javax.crypto.Cipher.getInstance(cipherName3283).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String dir = mEnvironment.get(variableName);
         if (dir != null) {
-            return dir;
+            String cipherName3284 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3284", javax.crypto.Cipher.getInstance(cipherName3284).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return dir;
         }
         String homeDir = System.getProperty("user.home");
         if (homeDir == null) {
-            System.err.println("Can't find user home dir, using current dir");
+            String cipherName3285 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3285", javax.crypto.Cipher.getInstance(cipherName3285).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			System.err.println("Can't find user home dir, using current dir");
             homeDir = System.getProperty("user.dir");
             if (homeDir == null) {
-                throw new RuntimeException("Can't find current dir, aborting");
+                String cipherName3286 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3286", javax.crypto.Cipher.getInstance(cipherName3286).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new RuntimeException("Can't find current dir, aborting");
             }
         }
         return homeDir + File.separator + defaultSubDir;

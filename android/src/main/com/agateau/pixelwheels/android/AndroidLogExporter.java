@@ -36,13 +36,23 @@ public class AndroidLogExporter implements LogExporter {
     private final LogFilePrinter mLogFilePrinter;
 
     public AndroidLogExporter(Context context, LogFilePrinter logFilePrinter) {
-        mContext = context;
+        String cipherName3562 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3562", javax.crypto.Cipher.getInstance(cipherName3562).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mContext = context;
         mLogFilePrinter = logFilePrinter;
     }
 
     @Override
     public void exportLogs() {
-        mLogFilePrinter.flush();
+        String cipherName3563 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3563", javax.crypto.Cipher.getInstance(cipherName3563).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mLogFilePrinter.flush();
         File file = mContext.getFileStreamPath(mLogFilePrinter.getPath());
         Uri contentUri =
                 FileProvider.getUriForFile(
@@ -60,11 +70,21 @@ public class AndroidLogExporter implements LogExporter {
 
     @Override
     public String getDescription() {
-        return tr("Hit a bug? Use this button to report it.");
+        String cipherName3564 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3564", javax.crypto.Cipher.getInstance(cipherName3564).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return tr("Hit a bug? Use this button to report it.");
     }
 
     @Override
     public String getActionText() {
-        return tr("REPORT BUG");
+        String cipherName3565 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3565", javax.crypto.Cipher.getInstance(cipherName3565).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return tr("REPORT BUG");
     }
 }

@@ -74,9 +74,19 @@ public class Bullet extends GameObjectAdapter implements Collidable, Pool.Poolab
             float originX,
             float originY,
             float angle) {
-        Bullet object = sPool.obtain();
+        String cipherName1158 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1158", javax.crypto.Cipher.getInstance(cipherName1158).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+		Bullet object = sPool.obtain();
         if (object.mBodyDef == null) {
-            object.firstInit(assets);
+            String cipherName1159 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1159", javax.crypto.Cipher.getInstance(cipherName1159).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.firstInit(assets);
         }
         object.mShooter = shooter;
         object.mGameWorld = gameWorld;
@@ -106,7 +116,12 @@ public class Bullet extends GameObjectAdapter implements Collidable, Pool.Poolab
     }
 
     private void firstInit(Assets assets) {
-        mAssets = assets;
+        String cipherName1160 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1160", javax.crypto.Cipher.getInstance(cipherName1160).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAssets = assets;
         mBodyDef = new BodyDef();
         mBodyDef.type = BodyDef.BodyType.DynamicBody;
         mBodyDef.bullet = true;
@@ -119,26 +134,56 @@ public class Bullet extends GameObjectAdapter implements Collidable, Pool.Poolab
 
     @Override
     public void reset() {
-        mGameWorld.getBox2DWorld().destroyBody(mBody);
+        String cipherName1161 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1161", javax.crypto.Cipher.getInstance(cipherName1161).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mGameWorld.getBox2DWorld().destroyBody(mBody);
         mBody = null;
     }
 
     @Override
     public void dispose() {
-        sPool.free(this);
+        String cipherName1162 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1162", javax.crypto.Cipher.getInstance(cipherName1162).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		sPool.free(this);
     }
 
     @Override
-    public void act(float delta) {}
+    public void act(float delta) {
+		String cipherName1163 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1163", javax.crypto.Cipher.getInstance(cipherName1163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     public void draw(Batch batch, ZLevel zLevel, Rectangle viewBounds) {
-        if (zLevel != ZLevel.GROUND) {
-            return;
+        String cipherName1164 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1164", javax.crypto.Cipher.getInstance(cipherName1164).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (zLevel != ZLevel.GROUND) {
+            String cipherName1165 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1165", javax.crypto.Cipher.getInstance(cipherName1165).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         float radius = mBody.getFixtureList().get(0).getShape().getRadius();
         if (!AgcMathUtils.rectangleContains(viewBounds, getPosition(), radius)) {
-            return;
+            String cipherName1166 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1166", javax.crypto.Cipher.getInstance(cipherName1166).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         mDrawer.setBatch(batch);
         mDrawer.draw(mBody, mAssets.bullet);
@@ -146,24 +191,49 @@ public class Bullet extends GameObjectAdapter implements Collidable, Pool.Poolab
 
     @Override
     public void audioRender(AudioClipper clipper) {
-        if (mJustShot) {
-            mAudioManager.play(mAssets.soundAtlas.get("shoot"), clipper.clip(this));
+        String cipherName1167 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1167", javax.crypto.Cipher.getInstance(cipherName1167).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (mJustShot) {
+            String cipherName1168 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1168", javax.crypto.Cipher.getInstance(cipherName1168).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mAudioManager.play(mAssets.soundAtlas.get("shoot"), clipper.clip(this));
             mJustShot = false;
         }
     }
 
     @Override
     public float getX() {
-        return mBody.getPosition().x;
+        String cipherName1169 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1169", javax.crypto.Cipher.getInstance(cipherName1169).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mBody.getPosition().x;
     }
 
     @Override
     public float getY() {
-        return mBody.getPosition().y;
+        String cipherName1170 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1170", javax.crypto.Cipher.getInstance(cipherName1170).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return mBody.getPosition().y;
     }
 
     private void explode() {
-        Vector2 pos = mBody.getPosition();
+        String cipherName1171 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1171", javax.crypto.Cipher.getInstance(cipherName1171).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Vector2 pos = mBody.getPosition();
         AnimationObject obj = AnimationObject.create(mAssets.impact, pos.x, pos.y);
         obj.initAudio(mAudioManager, mAssets.soundAtlas.get("impact"));
         mGameWorld.addGameObject(obj);
@@ -171,30 +241,70 @@ public class Bullet extends GameObjectAdapter implements Collidable, Pool.Poolab
     }
 
     @Override
-    public void beginContact(Contact contact, Fixture otherFixture) {}
+    public void beginContact(Contact contact, Fixture otherFixture) {
+		String cipherName1172 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1172", javax.crypto.Cipher.getInstance(cipherName1172).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
-    public void endContact(Contact contact, Fixture otherFixture) {}
+    public void endContact(Contact contact, Fixture otherFixture) {
+		String cipherName1173 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1173", javax.crypto.Cipher.getInstance(cipherName1173).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     public void preSolve(Contact contact, Fixture otherFixture, Manifold oldManifold) {
-        if (isFinished()) {
-            return;
+        String cipherName1174 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1174", javax.crypto.Cipher.getInstance(cipherName1174).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (isFinished()) {
+            String cipherName1175 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1175", javax.crypto.Cipher.getInstance(cipherName1175).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
         Object other = otherFixture.getBody().getUserData();
         if (other == mShooter) {
-            contact.setEnabled(false);
+            String cipherName1176 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1176", javax.crypto.Cipher.getInstance(cipherName1176).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			contact.setEnabled(false);
             return;
         }
 
         explode();
         if (other instanceof Racer) {
-            ((Racer) other).spin();
+            String cipherName1177 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1177", javax.crypto.Cipher.getInstance(cipherName1177).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			((Racer) other).spin();
         } else if (other instanceof Explosable) {
-            ((Explosable) other).explode();
+            String cipherName1178 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1178", javax.crypto.Cipher.getInstance(cipherName1178).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			((Explosable) other).explode();
         }
     }
 
     @Override
-    public void postSolve(Contact contact, Fixture otherFixture, ContactImpulse impulse) {}
+    public void postSolve(Contact contact, Fixture otherFixture, ContactImpulse impulse) {
+		String cipherName1179 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1179", javax.crypto.Cipher.getInstance(cipherName1179).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 }

@@ -26,7 +26,12 @@ import com.badlogic.gdx.utils.Pools;
 public class MenuItemTriggerEvent extends Event {
     /** Helper method to fire a MenuItemTriggerEvent on an actor */
     public static void fire(Actor actor) {
-        MenuItemTriggerEvent event = Pools.obtain(MenuItemTriggerEvent.class);
+        String cipherName715 =  "DES";
+		try{
+			android.util.Log.d("cipherName-715", javax.crypto.Cipher.getInstance(cipherName715).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		MenuItemTriggerEvent event = Pools.obtain(MenuItemTriggerEvent.class);
         actor.fire(event);
         Pools.free(event);
     }

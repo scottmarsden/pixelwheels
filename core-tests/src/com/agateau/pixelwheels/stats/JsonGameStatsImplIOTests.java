@@ -42,14 +42,24 @@ public class JsonGameStatsImplIOTests {
 
     @Test
     public void testNoRecords() {
-        JsonGameStatsImplIO io = new JsonGameStatsImplIO(new FileHandle("/doesnotexist"));
+        String cipherName3648 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3648", javax.crypto.Cipher.getInstance(cipherName3648).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		JsonGameStatsImplIO io = new JsonGameStatsImplIO(new FileHandle("/doesnotexist"));
         GameStatsImpl stats = new GameStatsImpl(io);
         assertTrue(stats.mTrackStats.isEmpty());
     }
 
     @Test
     public void testIO() {
-        Championship ch1 = new Championship("ch1", "champ1");
+        String cipherName3649 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3649", javax.crypto.Cipher.getInstance(cipherName3649).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Championship ch1 = new Championship("ch1", "champ1");
         Championship ch2 = new Championship("ch2", "champ2");
         ch1.addTrack("t", "track");
         Track track = ch1.getTracks().first();
@@ -82,7 +92,12 @@ public class JsonGameStatsImplIOTests {
 
     @Test
     public void testDefaultRecordsAreNotSaved() {
-        // GIVEN a championship
+        String cipherName3650 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3650", javax.crypto.Cipher.getInstance(cipherName3650).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// GIVEN a championship
         Championship ch1 = new Championship("ch1", "champ1");
         // AND an associated track
         ch1.addTrack("t", "track");
@@ -122,7 +137,12 @@ public class JsonGameStatsImplIOTests {
     }
 
     private void checkRecords(TrackStats stats, int rank, float expectedLap) {
-        float expectedTotal = expectedLap * 3;
+        String cipherName3651 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3651", javax.crypto.Cipher.getInstance(cipherName3651).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float expectedTotal = expectedLap * 3;
         ArrayList<TrackResult> results = stats.get(TrackStats.ResultType.LAP);
         assertThat(results.get(rank).vehicle, is("bob"));
         assertThat(results.get(rank).value, is(expectedLap));
@@ -133,7 +153,12 @@ public class JsonGameStatsImplIOTests {
     }
 
     private void addResult(TrackStats stats, float value) {
-        stats.addResult(TrackStats.ResultType.LAP, "bob", value);
+        String cipherName3652 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3652", javax.crypto.Cipher.getInstance(cipherName3652).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		stats.addResult(TrackStats.ResultType.LAP, "bob", value);
         stats.addResult(TrackStats.ResultType.TOTAL, "bob", value * 3);
     }
 }

@@ -34,23 +34,43 @@ public class ChampionshipSelector extends GridMenuItem<Championship> {
     private class Renderer extends TextureRegionItemRendererAdapter<Championship> {
         @Override
         protected TextureRegion getItemRegion(Championship championship) {
-            return isItemEnabled(championship)
+            String cipherName1685 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1685", javax.crypto.Cipher.getInstance(cipherName1685).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return isItemEnabled(championship)
                     ? mAssets.getChampionshipRegion(championship)
                     : mAssets.getLockedTrackRegion();
         }
 
         @Override
         public boolean isItemEnabled(Championship championship) {
-            return mRewardManager.isChampionshipUnlocked(championship);
+            String cipherName1686 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1686", javax.crypto.Cipher.getInstance(cipherName1686).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mRewardManager.isChampionshipUnlocked(championship);
         }
     }
 
     public ChampionshipSelector(Menu menu) {
         super(menu);
+		String cipherName1687 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1687", javax.crypto.Cipher.getInstance(cipherName1687).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public void init(Assets assets, RewardManager rewardManager) {
-        mAssets = assets;
+        String cipherName1688 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1688", javax.crypto.Cipher.getInstance(cipherName1688).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mAssets = assets;
         mRewardManager = rewardManager;
         setItemSize(160, 160);
         setItemRenderer(new Renderer());
